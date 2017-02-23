@@ -18,7 +18,7 @@ CustomSinCurve.prototype.getPoint = function ( t ) {
 };
 
 var path = new CustomSinCurve( 10 );
-var tubometry = new THREE.TubeGeometry( path, 20, 2, 8, false );
+var tubometry = new THREE.TubeGeometry( path, 5, 2, .5, false );
 
 var esferaForma = new THREE.SphereGeometry(.65);
 esferaForma.translate(0,1,0);
