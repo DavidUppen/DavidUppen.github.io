@@ -1,4 +1,3 @@
-
 var troncoForma = new THREE.CylinderGeometry(.25, .5, 1);
 var esferaForma = new THREE.SphereGeometry(.65);
 esferaForma.translate(0,1,0);
