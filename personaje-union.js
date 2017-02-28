@@ -3,7 +3,7 @@ for ( var i = 0; i < 10; i ++ ) {
 	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
 }
 var tazonForma = new THREE.LatheGeometry( points );
-var cilindroForma = new THREE.CylinderGeometry(.25, .5, 1);
+var cilindroForma = new THREE.CylinderGeometry(.125, .25, .2);
 //var esferaForma = new THREE.SphereGeometry(.65);
 //esferaForma.translate(0,1,0);
 var cilindroMalla = new THREE.Mesh(cilindroForma);
