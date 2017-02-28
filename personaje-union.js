@@ -1,40 +1,23 @@
-function CustomSinCurve( scale ){
-
-	this.scale = ( scale === undefined ) ? 1 : scale;
-
+var points = [];
+for ( var i = 0; i < 10; i ++ ) {
+	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
 }
+var tazonForma = new THREE.LatheGeometry( points );
+var cilindroForma = new THREE.CylinderGeometry(.25, .5, 1);
+//var esferaForma = new THREE.SphereGeometry(.65);
+//esferaForma.translate(0,1,0);
+var cilindroMalla = new THREE.Mesh(cilindroForma);
+var tazonMalla = new THREE.Mesh(tazonForma);
 
-CustomSinCurve.prototype = Object.create( THREE.Curve.prototype );
-CustomSinCurve.prototype.constructor = CustomSinCurve;
-
-CustomSinCurve.prototype.getPoint = function ( t ) {
-
-	var tx = t * 3 - 1.5;
-	var ty = Math.sin( 2 * Math.PI * t );
-	var tz = 0;
-
-	return new THREE.Vector3( tx, ty, tz ).multiplyScalar( this.scale );
-
-};
-
-var path = new CustomSinCurve( 10 );
-var tubometry = new THREE.TubeGeometry( path, 5, 2, .5, false );
-
-var esferaForma = new THREE.SphereGeometry(.65);
-esferaForma.translate(0,1,0);
-
-var tuboMalla = new THREE.Mesh(tubometry);
-var esferaMalla = new THREE.Mesh(esferaForma);
-
-var dragon = new THREE.Geometry();
-dragon.merge(tuboMalla.geometry, tuboMalla.matrix);
-dragon.merge(esferaMalla.geometry, esferaMalla.matrix);
+var formaForma = new THREE.Geometry();
+formaForma.merge(cilindroMalla.geometry, cilindroMalla.matrix);
+formaForma.merge(tazonMalla.geometry, tazonMalla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
-var dragonMalla = new THREE.Mesh(dragon, material);
+var formaMalla = new THREE.Mesh(formaForma, material);
 
 var escena = new THREE.Scene();
-escena.add(dragonMalla);
+escena.add(formaMalla);
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 5;
