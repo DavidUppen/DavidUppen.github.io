@@ -4,13 +4,14 @@ for ( var i = 0; i < 10; i ++ ) {
 }
 var tazonForma = new THREE.LatheGeometry( points );
 
-//var cilindroForma = new THREE.CylinderGeometry(.125, .25, .2);
+var cilindroForma = new THREE.CylinderGeometry(.125, .25, .2);
 
 //var esferaForma = new THREE.SphereGeometry(.65);
 //esferaForma.translate(0,1,0);
-
-//var cilindroMalla = new THREE.Mesh(cilindroForma);
 var material = new THREE.MeshNormalMaterial();
+
+var cilindroMalla = new THREE.Mesh(cilindroForma,material);
+
 var tazonMalla = new THREE.Mesh(tazonForma,material);
 
 //var formaForma = new THREE.Geometry();
@@ -22,9 +23,12 @@ var tazonMalla = new THREE.Mesh(tazonForma,material);
 
 var escena = new THREE.Scene();
 escena.add(tazonMalla);
+escena.add(cilindroMalla);
+cilindroMalla.position.x=5
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 1;
+camara.position.z = 5;
+
 
 renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
