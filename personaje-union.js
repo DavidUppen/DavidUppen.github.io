@@ -1,6 +1,6 @@
 var points = [];
 for ( var i = 0; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
+	points.push( new THREE.Vector2( 5*(Math.sin( i * 0.2 ) * 10 + 5), ( i - 5 ) * 10 ) );
 }
 var tazonForma = new THREE.LatheGeometry( points );
 
