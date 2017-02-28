@@ -22,7 +22,7 @@ var tazonMalla = new THREE.Mesh(tazonForma,material);
 
 var escena = new THREE.Scene();
 escena.add(tazonMalla);
-
+pñ
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 1;
 
