@@ -18,10 +18,10 @@
 
   THREE.ImageUtils.crossOrigin = '';
   var textura = THREE.ImageUtils.loadTexture('https://daviduppen.github.io/METAL.jpg');
-  var material = new THREE.MeshBasicMaterial( {map: textura} );
+  //var material = new THREE.MeshBasicMaterial( {map: textura} );
 	
   var geometry = new THREE.CylinderGeometry( 5, 4, 30, 3, 2, false, 0, 3.141592);
-	//var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
 	var cylinder = new THREE.Mesh( geometry, material );
 
 
