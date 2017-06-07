@@ -4,10 +4,10 @@ function setup(){
   var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/METAL.jpg');
   var material = new THREE.MeshBasicMaterial( {map: textura} );
   var forma = new THREE.BoxGeometry(1, 1, 1);
-  malla = new THREE.Mesh(forma, material);
+  //malla = new THREE.Mesh(forma, material);
  
   var geometry = new THREE.CylinderGeometry( 5, 4, 30, 3, 2, false, 0, 3.141592);
-	cylinder = new THREE.Mesh( geometry, material );
+	malla = new THREE.Mesh( geometry, material );
   
   
   
