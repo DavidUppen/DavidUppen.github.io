@@ -338,12 +338,15 @@ var mapa = new Array();
 	
 	//Tablero
 
-           	 var tablero = new THREE.BoxGeometry(48, 48, 0.2);
-            	var color1 = new THREE.Color(0x22DC6C);
+	THREE.ImageUtils.crossOrigin = '';
+  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/SNOW.jpg');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+        var tablero = new THREE.BoxGeometry(48, 48, 0.2);
+        //var color1 = new THREE.Color(0x22DC6C);
 	tablero.translate(0,0,-.6);
-           	var material = new THREE.MeshBasicMaterial(color1);
-            	material.color = color1;
-            	var tableroMalla = new THREE.Mesh(tablero, material);
+        //var material = new THREE.MeshBasicMaterial(color1);
+        //material.color = color1;
+        var tableroMalla = new THREE.Mesh(tablero, material);
 
 	//
 
