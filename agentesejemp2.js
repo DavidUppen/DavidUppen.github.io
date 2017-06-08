@@ -234,7 +234,10 @@ Robot.prototype.act= function(environment){
 
 
 function Wall(size,x=0,y=0){
-	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), new THREE.MeshNormalMaterial());
+	THREE.ImageUtils.crossOrigin = '';
+  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WOOD.jpg');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), material);
 	this.size= size;
 	this.position.x= x;
 	this.position.y= y;
