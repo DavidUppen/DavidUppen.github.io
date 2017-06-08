@@ -342,7 +342,7 @@ var mapa = new Array();
 	//Tablero
 
 	THREE.ImageUtils.crossOrigin = '';
-  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/SNOW.jpg');
+  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/MELTEDSNOW.jpg');
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
         var tablero = new THREE.BoxGeometry(48, 48, 0.2);
         //var color1 = new THREE.Color(0x22DC6C);
