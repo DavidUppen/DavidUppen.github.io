@@ -893,7 +893,6 @@ var mapa = new Array();
 function loop(){
 	
 	var id;
-	var demo= true;
 	id = requestAnimationFrame(loop);
 
 	var intersects = new Array();
@@ -930,7 +929,7 @@ function loop(){
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0;
+var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0,demo= false;
 
 setup();
 loop();
