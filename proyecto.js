@@ -1,17 +1,8 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
 var listener = function() {
 	camera.aspect = window.innerWidth/window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
 function push(e) {
 
 	if(pause!=1){				
@@ -34,111 +25,85 @@ function push(e) {
 					camera.position.y-=.2;
 				}
 			}
-			else if((derecha===3 && izquierda===-3)||(derecha===-1 && 
-
-izquierda===1)){
+			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
 					personaje.position.x-=.2;
 					camera.position.x-=.2;
 				}
 			}	
 		}
-		else if (e.keyCode===98||e.keyCode===83){			// S, NUM2	
-
-(Abajo)
+		else if (e.keyCode===98||e.keyCode===83){		// S, NUM2	(Abajo)
 			if(derecha===0 && izquierda===0){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
 					personaje.position.y-=.2;
 					camera.position.y-=.2;
 				}
 			}		
-			else if((derecha===1 && izquierda===-1)||(derecha===-3 && 
-
-izquierda===3)){
+			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
 					personaje.position.x-=.2;
 					camera.position.x-=.2;
 				}
 			}
-			else if((derecha===2 && izquierda===-2)||(derecha===-2 && 
-
-izquierda===2)){
+			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
 					personaje.position.y+=.2;
 					camera.position.y+=.2;
 				}
 			}
-			else if((derecha===3 && izquierda===-3)||(derecha===-1 && 
-
-izquierda===1)){
+			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
 					personaje.position.x+=.2;
 					camera.position.x+=.2;
 				}
 			}
 		}
-		else if (e.keyCode===69){					// E		
-
-(Derecha)
+		else if (e.keyCode===69){				// E		(Derecha)
 			if(derecha===0 && izquierda===0){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
 					personaje.position.x+=.2;
 					camera.position.x+=.2;
 				}
 			}		
-			else if((derecha===1 && izquierda===-1)||(derecha===-3 && 
-
-izquierda===3)){
+			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
 					personaje.position.y-=.2;
 					camera.position.y-=.2;
 				}
 			}
-			else if((derecha===2 && izquierda===-2)||(derecha===-2 && 
-
-izquierda===2)){
+			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
 					personaje.position.x-=.2;
 					camera.position.x-=.2;
 				}
 			}
-			else if((derecha===3 && izquierda===-3)||(derecha===-1 && 
-
-izquierda===1)){
+			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
 					personaje.position.y+=.2;
 					camera.position.y+=.2;
 				}
 			}
 		}
-		else if (e.keyCode===81){					//Q		
-
-(Izquierda)
+		else if (e.keyCode===81){				//Q		(Izquierda)
 			if(derecha===0 && izquierda===0){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
 					personaje.position.x-=.2;
 					camera.position.x-=.2;
 				}
 			}		
-			else if((derecha===1 && izquierda===-1)||(derecha===-3 && 
-
-izquierda===3)){
+			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
 					personaje.position.y+=.2;
 					camera.position.y+=.2;
 				}
 			}
-			else if((derecha===2 && izquierda===-2)||(derecha===-2 && 
-
-izquierda===2)){
+			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
 					personaje.position.x+=.2;
 					camera.position.x+=.2;
 				}
 			}
-			else if((derecha===3 && izquierda===-3)||(derecha===-1 && 
-
-izquierda===1)){
+			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
 					personaje.position.y-=.2;
 					camera.position.y-=.2;
@@ -146,9 +111,7 @@ izquierda===1)){
 			}
 		}
 	}
-	if (e.keyCode===100||e.keyCode===65){			// A, NUM4	
-
-(Camara Izquierda)
+	if (e.keyCode===100||e.keyCode===65){			// A, NUM4	(Camara Izquierda)
 		camera.rotateX(rotation*(-Math.PI/32));
 		camera.rotateX(Math.PI/8);
 		camera.rotateY(Math.PI/2);
@@ -165,9 +128,6 @@ izquierda===1)){
 			rotation=0;
 			def=0;
 		}	
-		
-		
-
 		if((derecha===0&&izquierda===0)||(derecha===4||izquierda===4)){
 			derecha=0;
 			izquierda=0;
@@ -189,9 +149,7 @@ izquierda===1)){
 		console.log(derecha);
 		console.log(izquierda);
 	}
-	else if (e.keyCode===102||e.keyCode===68){			// D, NUM6	
-
-(Camara Derecha)	
+	else if (e.keyCode===102||e.keyCode===68){		// D, NUM6	(Camara Derecha)	
 		camera.rotateX(rotation*(-Math.PI/32));
 		camera.rotateX(Math.PI/8);
 		camera.rotateY(-Math.PI/2);
@@ -208,8 +166,6 @@ izquierda===1)){
 			rotation=0;
 			def=0;
 		}
-		
-		
 		if((derecha===0&&izquierda===0)||(derecha===4||izquierda===4)){
 			derecha=0;
 			izquierda=0;
@@ -231,83 +187,54 @@ izquierda===1)){
 		console.log(derecha);
 		console.log(izquierda);
 	}
-	else if (e.keyCode===54){					//6	(Aleja 
-
-CamaraX)
+	else if (e.keyCode===54){			//6	(Aleja CamaraX)
 		camera.position.x-=.2;
 	}	
-	else if (e.keyCode===53){					//5	(Acerca 
-
-CamaraX)
+	else if (e.keyCode===53){			//5	(Acerca CamaraX)
 		camera.position.x+=.2;
 	}
-	else if (e.keyCode===57){					//9	(Baja 
-
-Camara)
+	else if (e.keyCode===57){			//9	(Baja Camara)
 		camera.position.z-=.2;
 	}	
-	else if (e.keyCode===48){					//0	(Sube 
-
-Camara)
+	else if (e.keyCode===48){			//0	(Sube Camara)
 		camera.position.z+=.2;
 	}
-	else if (e.keyCode===56){					//8	(Aleja 
-
-CamaraY)
+	else if (e.keyCode===56){			//8	(Aleja CamaraY)
 		camera.position.y-=.2;
 		k-=.2;
-
 	}	
-	else if (e.keyCode===55){					//7	(Acerca 
-
-CamaraY)
+	else if (e.keyCode===55){			//7	(Acerca CamaraY)
 		camera.position.y+=.2;
 		k+=.2;
 	}
-	else if (e.keyCode===52){					//4	(Inclinación 
-
-Camara X)
+	else if (e.keyCode===52){			//4	(Inclinación Camara X)
 		rotation-=1;
 		camera.rotateX(-Math.PI/32);
 	}
-	else if (e.keyCode===51){					//3	(Inclinación 
-
-Camara X)
+	else if (e.keyCode===51){			//3	(Inclinación Camara X)
 		rotation+=1;
 		camera.rotateX(Math.PI/32);
 	}
-	else if (e.keyCode===80){					//P	(Pausa)
+	else if (e.keyCode===80){			//P	(Pausa)
 		pause+=1;
 		if (pause!=1){
 			pause=0;
 		}	
 	}							
-	else if (e.keyCode===76){					//L	(Camara por 
-
-Defecto)
+	else if (e.keyCode===76){			//L	(Camara por Defecto)
 		def+=1;
 		if (def!=1){
 			def=0;
 		}	
 	}
-	//else{							//	(Muestra 
-
-Código ASCII Obtenido)
+	//else{						//	(Muestra Código ASCII Obtenido)
 		console.log(e.keyCode);
-console.log(def);
-
+		//console.log(e.keyCode);
 	//}
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function Agent(x=0, y=0){				//	(Declaración Agente)
 
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-function Agent(x=0, y=0){						//	(Declaración 
-
-Agente)
-	
 	THREE.Object3D.call(this);
 	this.position.x= x;
 	this.position.y= y;
@@ -320,26 +247,12 @@ Agent.prototype.plan= function(environment) {};
 Agent.prototype.act= function(environment) {};
 
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-function getRandomArbitrary(min, max) {				//	(Obtención 
-
-Números Aleatorios)
+function getRandomArbitrary(min, max) {			//	(Obtención Números Aleatorios)
   	return Math.random() * (max - min) + min;
 }
 
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-function Environment(){						//	(Declaración 
-
-Ambiente)
+function Environment(){					//	(Declaración Ambiente)
 
 	THREE.Scene.call(this);
 
@@ -383,11 +296,6 @@ Environment.prototype.setMap= function(map) {
 };
 
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 function WallE(){
 	
 	// Wall-E
@@ -395,19 +303,19 @@ function WallE(){
             	llanta.moveTo(9.5/8,0);
             	llanta.lineTo(18.5/8,0);
             	llanta.lineTo(16.5/8,5/8);
-	llanta.lineTo(11.5/8,5/8);
-	llanta.lineTo(9.5/8,0);
+		llanta.lineTo(11.5/8,5/8);
+		llanta.lineTo(9.5/8,0);
 
-            	var extruir = {
-                		steps: 10,
-                		amount: 1,
-                		bevelEnabled: false,
-                		bevelThickness: 0,
-                		bevelSize: 0,
-                		bevelSegments: 1
-            	};
+	var extruir = {
+                steps: 10,
+                amount: 1,
+                bevelEnabled: false,
+                bevelThickness: 0,
+                bevelSize: 0,
+                bevelSegments: 1
+        };
 
-        	var llanta1 = new THREE.ExtrudeGeometry(llanta, extruir);
+        var llanta1 = new THREE.ExtrudeGeometry(llanta, extruir);
 	var llanta2 = new THREE.ExtrudeGeometry(llanta, extruir);
 	var bodyForma = new THREE.BoxGeometry( 8.5/8, 8.5/8, 8.5/8 );
 	var bodyForma1 = new THREE.BoxGeometry( 6.8/8, 3.2/8, 3.2/8 );
@@ -427,7 +335,10 @@ function WallE(){
 	eyeForma2.translate(0.22,-0.3,1.1);
 	neckForma.translate(0,0,.9);
 
-	var material = new THREE.MeshBasicMaterial({color: '#aa0000'});
+	//var material = new THREE.MeshBasicMaterial({color: '#aa0000'});
+	THREE.ImageUtils.crossOrigin = '';
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE2.jpg');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
 
 	var llanta1Malla = new THREE.Mesh(llanta1,material);
 	var llanta2Malla = new THREE.Mesh(llanta2,material);
@@ -438,24 +349,18 @@ function WallE(){
 	var neckMalla = new THREE.Mesh(neckForma, material);	
 
 	var WallEForma = new THREE.Geometry();
-	WallEForma.merge(llanta1Malla.geometry,llanta1Malla.matrix)
-	WallEForma.merge(llanta2Malla.geometry,llanta2Malla.matrix)
-	WallEForma.merge(cuboMalla.geometry,cuboMalla.matrix)
-	WallEForma.merge(cuboMalla1.geometry,cuboMalla1.matrix)
-	WallEForma.merge(eyeMalla1.geometry,eyeMalla1.matrix)
-	WallEForma.merge(eyeMalla2.geometry,eyeMalla2.matrix)
-	WallEForma.merge(neckMalla.geometry,neckMalla.matrix)
+	WallEForma.merge(llanta1Malla.geometry,llanta1Malla.matrix);
+	WallEForma.merge(llanta2Malla.geometry,llanta2Malla.matrix);
+	WallEForma.merge(cuboMalla.geometry,cuboMalla.matrix);
+	WallEForma.merge(cuboMalla1.geometry,cuboMalla1.matrix);
+	WallEForma.merge(eyeMalla1.geometry,eyeMalla1.matrix);
+	WallEForma.merge(eyeMalla2.geometry,eyeMalla2.matrix);
+	WallEForma.merge(neckMalla.geometry,neckMalla.matrix);
 	var mesh = new THREE.Mesh(WallEForma,material);
 
 	mesh.rotateZ(Math.PI/2);
 	return mesh;
 }
-
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 function Robot(size,x=0,y=0){
 
@@ -473,16 +378,13 @@ Robot.prototype= new Agent();
 
 
 Robot.prototype.sense= function(environment){
-	this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin
-
-(this.rotation.z),0));
+	this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
 	var obstaculo = this.sensor.intersectObjects(environment.children,true);
 
 	if((obstaculo.length >0 && (obstaculo[0].distance <= .7)))
 		this.sensor.colision= true;
 	else
 		this.sensor.colision= false;
-
 };
 
 
@@ -528,11 +430,6 @@ Robot.prototype.act= function(environment){
 };
 
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 function Sensor(position, direction){
 	THREE.Raycaster.call(this, position, direction);
 	this.colision=false;
@@ -565,16 +462,11 @@ Robot.prototype.operations.rotateCCW = function(robot, angle){
 };
 
 
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 function Wall(size,x=0,y=0){
-	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), new THREE.MeshNormalMaterial
-
-());
+	THREE.ImageUtils.crossOrigin = '';
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL1.gif');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), material);
 	this.size= size;
 	this.position.x= x;
 	this.position.y= y;
@@ -582,11 +474,6 @@ function Wall(size,x=0,y=0){
 }
 
 Wall.prototype= new THREE.Mesh();
-
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 function Personaje(t){
@@ -625,10 +512,7 @@ function Personaje(t){
 		var meshForma = new THREE.Geometry();
 		meshForma.merge(headMalla.geometry, headMalla.matrix);
 		meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);				
-
-							meshForma.merge
-
-(eyeMalla.geometry, eyeMalla.matrix);
+		meshForma.merge(eyeMalla.geometry, eyeMalla.matrix);
 		meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
 		meshForma.merge(armMalla.geometry, armMalla.matrix);
 		meshForma.merge(armMalla2.geometry, armMalla2.matrix);
@@ -641,235 +525,232 @@ function Personaje(t){
 		mesh.rotateY(Math.PI);
 		
 	}
-else if(t==2){
-var headForma = new THREE.BoxGeometry( .9, 0.6, 0.45 );
-var headForma2 = new THREE.CylinderGeometry( .3, .3, .9,3);
-var bodyForma = new THREE.CylinderGeometry( 0.225, 0.225, .6,6 );
-var eyeForma = new THREE.CylinderGeometry( .18,.18,0.3 );
-var eyeForma2 = new THREE.CylinderGeometry( .18, .18,0.3 );
-var armForma = new THREE.CylinderGeometry( .15, .15, .25,6 );
-var armForma2 = new THREE.CylinderGeometry( .15, .15, .25,6  );
-var legForma = new THREE.CylinderGeometry( .1, .1, .25 );
-var legForma2 = new THREE.CylinderGeometry( .1, .1, .25 );
-var earForma = new THREE.CylinderGeometry( .03, .15, .25 );
-var earForma2 = new THREE.CylinderGeometry( .03, .15, .25 );
-var esferaForma = new THREE.SphereGeometry(.15);
-var esferaForma2 = new THREE.SphereGeometry(.25);
+	else if(t==2){
+		var headForma = new THREE.BoxGeometry( .9, 0.6, 0.45 );
+		var headForma2 = new THREE.CylinderGeometry( .3, .3, .9,3);
+		var bodyForma = new THREE.CylinderGeometry( 0.225, 0.225, .6,6 );
+		var eyeForma = new THREE.CylinderGeometry( .18,.18,0.3 );
+		var eyeForma2 = new THREE.CylinderGeometry( .18, .18,0.3 );
+		var armForma = new THREE.CylinderGeometry( .15, .15, .25,6 );
+		var armForma2 = new THREE.CylinderGeometry( .15, .15, .25,6  );
+		var legForma = new THREE.CylinderGeometry( .1, .1, .25 );
+		var legForma2 = new THREE.CylinderGeometry( .1, .1, .25 );
+		var earForma = new THREE.CylinderGeometry( .03, .15, .25 );
+		var earForma2 = new THREE.CylinderGeometry( .03, .15, .25 );
+		var esferaForma = new THREE.SphereGeometry(.15);
+		var esferaForma2 = new THREE.SphereGeometry(.25);
 
-legForma.rotateX(-Math.PI/2);
-legForma2.rotateX(-Math.PI/2);
-legForma.translate(.14,0,0);
-legForma2.translate(-.14,0,0);
-bodyForma.rotateX(Math.PI/2);
-bodyForma.translate(0,0,-.35);
-headForma.translate(0,0,-0.8);
-headForma2.rotateZ(Math.PI/2);
-headForma2.rotateX(Math.PI/3);
-headForma2.translate(0,0,-1.125);
-armForma.translate(-.3,0,-0.35);
-armForma2.translate(.3,.18,-.4);
-eyeForma.translate(-.25,.25,-.825);
-eyeForma2.translate(.25,.25,-.825);
-esferaForma.translate(0,-0.2,-.2);
-earForma.rotateX(-4*Math.PI/5);
-earForma2.rotateX(-4*Math.PI/5);
-earForma.translate(-.25,-.18,-1.35);
-earForma2.translate(.25,-.18,-1.35);
+		legForma.rotateX(-Math.PI/2);
+		legForma2.rotateX(-Math.PI/2);
+		legForma.translate(.14,0,0);
+		legForma2.translate(-.14,0,0);
+		bodyForma.rotateX(Math.PI/2);
+		bodyForma.translate(0,0,-.35);
+		headForma.translate(0,0,-0.8);
+		headForma2.rotateZ(Math.PI/2);
+		headForma2.rotateX(Math.PI/3);
+		headForma2.translate(0,0,-1.125);
+		armForma.translate(-.3,0,-0.35);
+		armForma2.translate(.3,.18,-.4);
+		eyeForma.translate(-.25,.25,-.825);
+		eyeForma2.translate(.25,.25,-.825);
+		esferaForma.translate(0,-0.2,-.2);
+		earForma.rotateX(-4*Math.PI/5);
+		earForma2.rotateX(-4*Math.PI/5);
+		earForma.translate(-.25,-.18,-1.35);
+		earForma2.translate(.25,-.18,-1.35);
 
 
-var headMalla = new THREE.Mesh(headForma);
-var headMalla2 = new THREE.Mesh(headForma2);
-var bodyMalla = new THREE.Mesh(bodyForma);
-var eyeMalla = new THREE.Mesh(eyeForma);
-var eyeMalla2 = new THREE.Mesh(eyeForma2);
-var armMalla = new THREE.Mesh(armForma);
-var armMalla2 = new THREE.Mesh(armForma2);
-var  legMalla= new THREE.Mesh(legForma);
-var  legMalla2= new THREE.Mesh(legForma2);
-var earMalla= new THREE.Mesh(earForma);
-var  earMalla2= new THREE.Mesh(earForma2);
-var esferaMalla = new THREE.Mesh(esferaForma);
-var esferaMalla2 = new THREE.Mesh(esferaForma2);
+		var headMalla = new THREE.Mesh(headForma);
+		var headMalla2 = new THREE.Mesh(headForma2);
+		var bodyMalla = new THREE.Mesh(bodyForma);
+		var eyeMalla = new THREE.Mesh(eyeForma);
+		var eyeMalla2 = new THREE.Mesh(eyeForma2);
+		var armMalla = new THREE.Mesh(armForma);
+		var armMalla2 = new THREE.Mesh(armForma2);
+		var  legMalla= new THREE.Mesh(legForma);
+		var  legMalla2= new THREE.Mesh(legForma2);
+		var earMalla= new THREE.Mesh(earForma);
+		var  earMalla2= new THREE.Mesh(earForma2);
+		var esferaMalla = new THREE.Mesh(esferaForma);
+		var esferaMalla2 = new THREE.Mesh(esferaForma2);
 
-var meshForma = new THREE.Geometry();
-meshForma.merge(headMalla.geometry, headMalla.matrix);
-meshForma.merge(headMalla2.geometry, headMalla2.matrix);
-meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
-meshForma.merge(eyeMalla.geometry, eyeMalla.matrix);
-meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
-meshForma.merge(armMalla.geometry, armMalla.matrix);
-meshForma.merge(armMalla2.geometry, armMalla2.matrix);
-//meshForma.merge(legMalla.geometry, legMalla.matrix);
-//meshForma.merge(legMalla2.geometry, legMalla2.matrix);
-meshForma.merge(earMalla.geometry, earMalla.matrix);
-meshForma.merge(earMalla2.geometry, earMalla2.matrix);
-meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
-meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
+		var meshForma = new THREE.Geometry();
+		meshForma.merge(headMalla.geometry, headMalla.matrix);
+		meshForma.merge(headMalla2.geometry, headMalla2.matrix);
+		meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
+		meshForma.merge(eyeMalla.geometry, eyeMalla.matrix);
+		meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
+		meshForma.merge(armMalla.geometry, armMalla.matrix);
+		meshForma.merge(armMalla2.geometry, armMalla2.matrix);
+		//meshForma.merge(legMalla.geometry, legMalla.matrix);
+		//meshForma.merge(legMalla2.geometry, legMalla2.matrix);
+		meshForma.merge(earMalla.geometry, earMalla.matrix);
+		meshForma.merge(earMalla2.geometry, earMalla2.matrix);
+		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
+		meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
 
-var material = new THREE.MeshNormalMaterial();
-var mesh = new THREE.Mesh(meshForma, material);
+		var material = new THREE.MeshNormalMaterial();
+		var mesh = new THREE.Mesh(meshForma, material);
 
-mesh.rotateY(Math.PI);	
+		mesh.rotateY(Math.PI);	
 	}
-else if(t==3){
-var headForma = new THREE.BoxGeometry( .45, .45, .35 );
-var bodyForma = new THREE.BoxGeometry( 0.35, 0.3, .6 );
-var eyeForma = new THREE.CylinderGeometry( .1,.1,0.4 );
-var eyeForma2 = new THREE.CylinderGeometry( .1, .1,0.4 );
-var armForma = new THREE.CylinderGeometry( .04, .03, .3 );
-var armForma2 = new THREE.CylinderGeometry( .04, .03, .3  );
-var handForma = new THREE.SphereGeometry( .08 );
-var handForma2 = new THREE.SphereGeometry( .08 );
-var cableForma = new THREE.CylinderGeometry( .02, .02, .4 );
-var cableForma2 = new THREE.CylinderGeometry( .02, .02, .4 );
-var cableForma3 = new THREE.CylinderGeometry( .02, .02, .6 );
-var esferaForma = new THREE.SphereGeometry(.05);
-var shoulderForma= new THREE.CylinderGeometry(.10,.15,.35,3);
-var shoulderForma2= new THREE.CylinderGeometry(.15,.10,.35,3);
+	else if(t==3){
+		var headForma = new THREE.BoxGeometry( .45, .45, .35 );
+		var bodyForma = new THREE.BoxGeometry( 0.35, 0.3, .6 );
+		var eyeForma = new THREE.CylinderGeometry( .1,.1,0.4 );
+		var eyeForma2 = new THREE.CylinderGeometry( .1, .1,0.4 );
+		var armForma = new THREE.CylinderGeometry( .04, .03, .3 );
+		var armForma2 = new THREE.CylinderGeometry( .04, .03, .3  );
+		var handForma = new THREE.SphereGeometry( .08 );
+		var handForma2 = new THREE.SphereGeometry( .08 );
+		var cableForma = new THREE.CylinderGeometry( .02, .02, .4 );
+		var cableForma2 = new THREE.CylinderGeometry( .02, .02, .4 );
+		var cableForma3 = new THREE.CylinderGeometry( .02, .02, .6 );
+		var esferaForma = new THREE.SphereGeometry(.05);
+		var shoulderForma= new THREE.CylinderGeometry(.10,.15,.35,3);
+		var shoulderForma2= new THREE.CylinderGeometry(.15,.10,.35,3);
 
-esferaForma.translate(0,0,0);
-cableForma3.rotateX(-Math.PI/2);
-cableForma3.translate(0,0,-0.25);
-bodyForma.translate(0,0,-0.8);
-headForma.translate(0,0,-1.2);
-armForma.rotateX(Math.PI/2);
-armForma2.rotateX(Math.PI/2);
-armForma.translate(.32,0,-.5);
-armForma2.translate(-.32,0,-.5);
-handForma.translate(.32,0,-0.3);
-handForma2.translate(-.32,0,-0.3);
-eyeForma.translate(.12,.10,-1.2);
-eyeForma2.translate(-.12,.10,-1.2);
-shoulderForma.rotateZ(Math.PI/2);
-shoulderForma2.rotateZ(Math.PI/2);
-shoulderForma.translate(-.25,0,-.95);
-shoulderForma2.translate(.25,0,-.95);
-cableForma.rotateX(Math.PI/2);
-cableForma2.rotateX(Math.PI/2);
-cableForma.translate(-.32,0,-.8);
-cableForma2.translate(.32,0,-.8);
+		esferaForma.translate(0,0,0);
+		cableForma3.rotateX(-Math.PI/2);
+		cableForma3.translate(0,0,-0.25);
+		bodyForma.translate(0,0,-0.8);
+		headForma.translate(0,0,-1.2);
+		armForma.rotateX(Math.PI/2);
+		armForma2.rotateX(Math.PI/2);
+		armForma.translate(.32,0,-.5);
+		armForma2.translate(-.32,0,-.5);
+		handForma.translate(.32,0,-0.3);
+		handForma2.translate(-.32,0,-0.3);
+		eyeForma.translate(.12,.10,-1.2);
+		eyeForma2.translate(-.12,.10,-1.2);
+		shoulderForma.rotateZ(Math.PI/2);
+		shoulderForma2.rotateZ(Math.PI/2);
+		shoulderForma.translate(-.25,0,-.95);
+		shoulderForma2.translate(.25,0,-.95);
+		cableForma.rotateX(Math.PI/2);
+		cableForma2.rotateX(Math.PI/2);
+		cableForma.translate(-.32,0,-.8);
+		cableForma2.translate(.32,0,-.8);
 
-var headMalla = new THREE.Mesh(headForma);
-var bodyMalla = new THREE.Mesh(bodyForma);
-var eyeMalla = new THREE.Mesh(eyeForma);
-var eyeMalla2 = new THREE.Mesh(eyeForma2);
-var armMalla = new THREE.Mesh(armForma);
-var armMalla2 = new THREE.Mesh(armForma2);
-var handMalla= new THREE.Mesh(handForma);
-var handMalla2= new THREE.Mesh(handForma2);
-var cableMalla= new THREE.Mesh(cableForma);
-var cableMalla2= new THREE.Mesh(cableForma2);
-var cableMalla3= new THREE.Mesh(cableForma3);
-var shoulderMalla= new THREE.Mesh(shoulderForma);
-var shoulderMalla2= new THREE.Mesh(shoulderForma2);
-var esferaMalla = new THREE.Mesh(esferaForma);
+		var headMalla = new THREE.Mesh(headForma);
+		var bodyMalla = new THREE.Mesh(bodyForma);
+		var eyeMalla = new THREE.Mesh(eyeForma);
+		var eyeMalla2 = new THREE.Mesh(eyeForma2);
+		var armMalla = new THREE.Mesh(armForma);
+		var armMalla2 = new THREE.Mesh(armForma2);
+		var handMalla= new THREE.Mesh(handForma);
+		var handMalla2= new THREE.Mesh(handForma2);
+		var cableMalla= new THREE.Mesh(cableForma);
+		var cableMalla2= new THREE.Mesh(cableForma2);
+		var cableMalla3= new THREE.Mesh(cableForma3);
+		var shoulderMalla= new THREE.Mesh(shoulderForma);
+		var shoulderMalla2= new THREE.Mesh(shoulderForma2);
+		var esferaMalla = new THREE.Mesh(esferaForma);
 
-var meshForma = new THREE.Geometry();
-meshForma.merge(headMalla.geometry, headMalla.matrix);
-meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
-meshForma.merge(eyeMalla.geometry, eyeMalla.matrix);
-meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
-meshForma.merge(armMalla.geometry, armMalla.matrix);
-meshForma.merge(armMalla2.geometry, armMalla2.matrix);
-meshForma.merge(handMalla.geometry, handMalla.matrix);
-meshForma.merge(handMalla2.geometry, handMalla2.matrix);
-meshForma.merge(cableMalla.geometry, cableMalla.matrix);
-meshForma.merge(cableMalla2.geometry, cableMalla2.matrix);
-meshForma.merge(cableMalla3.geometry, cableMalla3.matrix);
-meshForma.merge(shoulderMalla.geometry, shoulderMalla.matrix);
-meshForma.merge(shoulderMalla2.geometry, shoulderMalla2.matrix);
-meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
+		var meshForma = new THREE.Geometry();
+		meshForma.merge(headMalla.geometry, headMalla.matrix);
+		meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
+		meshForma.merge(eyeMalla.geometry, eyeMalla.matrix);
+		meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
+		meshForma.merge(armMalla.geometry, armMalla.matrix);
+		meshForma.merge(armMalla2.geometry, armMalla2.matrix);
+		meshForma.merge(handMalla.geometry, handMalla.matrix);
+		meshForma.merge(handMalla2.geometry, handMalla2.matrix);
+		meshForma.merge(cableMalla.geometry, cableMalla.matrix);
+		meshForma.merge(cableMalla2.geometry, cableMalla2.matrix);
+		meshForma.merge(cableMalla3.geometry, cableMalla3.matrix);
+		meshForma.merge(shoulderMalla.geometry, shoulderMalla.matrix);
+		meshForma.merge(shoulderMalla2.geometry, shoulderMalla2.matrix);
+		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
 
-var material = new THREE.MeshNormalMaterial();
-var mesh = new THREE.Mesh(meshForma, material);
+		var material = new THREE.MeshNormalMaterial();
+		var mesh = new THREE.Mesh(meshForma, material);
 
-mesh.rotateY(Math.PI);
+		mesh.rotateY(Math.PI);
 
-}
-if(t==4){
-var headForma = new THREE.SphereGeometry( 0.35,30);
-var esferaForma1 = new THREE.SphereGeometry( 0.07,20);
-var esferaForma2 = new THREE.SphereGeometry( 0.07,20);
-var cableForma1 = new THREE.CylinderGeometry( .07, .07, .35,20 );
-var cableForma2 = new THREE.CylinderGeometry( .07, .07, .35,20 );
-var bodyForma = new THREE.CylinderGeometry( 0.35, 0.35,.8,20);
-var armForma1 = new THREE.CylinderGeometry( .12, .12, .7 ,20);
-var armForma2 = new THREE.CylinderGeometry( .12, .12, .7 ,20);
-var eyeForma1 = new THREE.CylinderGeometry( .1,.1,0.4 );
-var eyeForma2 = new THREE.CylinderGeometry( .1, .1,0.4 );
-var esferaForma3 = new THREE.SphereGeometry( 0.12,20);
-var esferaForma4 = new THREE.SphereGeometry( 0.12,20);
-var esferaForma5 = new THREE.SphereGeometry( 0.12,20);
-var esferaForma6 = new THREE.SphereGeometry( 0.12,20);
-var esferaForma7= new THREE.SphereGeometry(.35,20);
-
-
-cableForma1.rotateX(Math.PI/2);
-cableForma2.rotateX(Math.PI/2);
-cableForma1.rotateY(Math.PI/6);
-cableForma2.rotateY(-Math.PI/6);
-cableForma1.translate(-.3,0,-1.2);
-cableForma2.translate(.3,0,-1.2);
-esferaForma7.translate(0,0,0);
-bodyForma.rotateX(Math.PI/2);
-bodyForma.translate(0,0,-.35);
-headForma.translate(0,0,-.8);
-armForma1.translate(-.44,.055,-.6);
-armForma1.rotateX(Math.PI/8)
-armForma2.translate(.44,.055,-.6);
-armForma2.rotateX(Math.PI/7);
-eyeForma1.translate(0.15,.16,-.9);
-eyeForma2.translate(-.15,.16,-.9);
-esferaForma6.translate(.44,.6,-.37);
-esferaForma5.translate(-.44,.58,-.416);
-esferaForma1.translate(-.39,0,-1.36);
-esferaForma2.translate(.39,0,-1.36);
-esferaForma3.translate(.44,-0.05,-.69);
-esferaForma4.translate(-.445,-0.05,-.67);
-
-var headMalla = new THREE.Mesh(headForma);
-var cableMalla1 = new THREE.Mesh(cableForma1);
-var cableMalla2 = new THREE.Mesh(cableForma2);
-var eyeMalla1 = new THREE.Mesh(eyeForma1);
-var eyeMalla2 = new THREE.Mesh(eyeForma2);
-var bodyMalla= new THREE.Mesh(bodyForma);
-var armMalla1 = new THREE.Mesh(armForma1);
-var armMalla2 = new THREE.Mesh(armForma2);
-var esferaMalla1 = new THREE.Mesh(esferaForma1);
-var esferaMalla2 = new THREE.Mesh(esferaForma2);
-var esferaMalla3= new THREE.Mesh(esferaForma3);
-var esferaMalla4 = new THREE.Mesh(esferaForma4);
-var esferaMalla5 = new THREE.Mesh(esferaForma5);
-var esferaMalla6 = new THREE.Mesh(esferaForma6);
-var esferaMalla7 = new THREE.Mesh(esferaForma7);
-
-var meshForma = new THREE.Geometry();
-meshForma.merge(headMalla.geometry, headMalla.matrix);
-meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
-meshForma.merge(eyeMalla1.geometry, eyeMalla1.matrix);
-meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
-meshForma.merge(armMalla1.geometry, armMalla1.matrix);
-meshForma.merge(armMalla2.geometry, armMalla2.matrix);
-meshForma.merge(cableMalla1.geometry, cableMalla1.matrix);
-meshForma.merge(cableMalla2.geometry, cableMalla2.matrix);
-meshForma.merge(esferaMalla1.geometry, esferaMalla1.matrix);
-meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
-meshForma.merge(esferaMalla3.geometry, esferaMalla3.matrix);
-meshForma.merge(esferaMalla4.geometry, esferaMalla4.matrix);
-meshForma.merge(esferaMalla5.geometry, esferaMalla5.matrix);
-meshForma.merge(esferaMalla6.geometry, esferaMalla6.matrix);
-meshForma.merge(esferaMalla7.geometry, esferaMalla7.matrix);
-
-var material = new THREE.MeshNormalMaterial();
-var mesh = new THREE.Mesh(meshForma, material);
+	}
+	if(t==4){
+		var headForma = new THREE.SphereGeometry( 0.35,30);
+		var esferaForma1 = new THREE.SphereGeometry( 0.07,20);
+		var esferaForma2 = new THREE.SphereGeometry( 0.07,20);
+		var cableForma1 = new THREE.CylinderGeometry( .07, .07, .35,20 );
+		var cableForma2 = new THREE.CylinderGeometry( .07, .07, .35,20 );
+		var bodyForma = new THREE.CylinderGeometry( 0.35, 0.35,.8,20);
+		var armForma1 = new THREE.CylinderGeometry( .12, .12, .7 ,20);
+		var armForma2 = new THREE.CylinderGeometry( .12, .12, .7 ,20);
+		var eyeForma1 = new THREE.CylinderGeometry( .1,.1,0.4 );
+		var eyeForma2 = new THREE.CylinderGeometry( .1, .1,0.4 );
+		var esferaForma3 = new THREE.SphereGeometry( 0.12,20);
+		var esferaForma4 = new THREE.SphereGeometry( 0.12,20);
+		var esferaForma5 = new THREE.SphereGeometry( 0.12,20);
+		var esferaForma6 = new THREE.SphereGeometry( 0.12,20);
+		var esferaForma7= new THREE.SphereGeometry(.35,20);
 
 
+		cableForma1.rotateX(Math.PI/2);
+		cableForma2.rotateX(Math.PI/2);
+		cableForma1.rotateY(Math.PI/6);
+		cableForma2.rotateY(-Math.PI/6);
+		cableForma1.translate(-.3,0,-1.2);
+		cableForma2.translate(.3,0,-1.2);
+		esferaForma7.translate(0,0,0);
+		bodyForma.rotateX(Math.PI/2);
+		bodyForma.translate(0,0,-.35);
+		headForma.translate(0,0,-.8);
+		armForma1.translate(-.44,.055,-.6);
+		armForma1.rotateX(Math.PI/8)
+		armForma2.translate(.44,.055,-.6);
+		armForma2.rotateX(Math.PI/7);
+		eyeForma1.translate(0.15,.16,-.9);
+		eyeForma2.translate(-.15,.16,-.9);
+		esferaForma6.translate(.44,.6,-.37);
+		esferaForma5.translate(-.44,.58,-.416);
+		esferaForma1.translate(-.39,0,-1.36);
+		esferaForma2.translate(.39,0,-1.36);
+		esferaForma3.translate(.44,-0.05,-.69);
+		esferaForma4.translate(-.445,-0.05,-.67);
 
-mesh.rotateY(Math.PI);
-}
+		var headMalla = new THREE.Mesh(headForma);
+		var cableMalla1 = new THREE.Mesh(cableForma1);
+		var cableMalla2 = new THREE.Mesh(cableForma2);
+		var eyeMalla1 = new THREE.Mesh(eyeForma1);
+		var eyeMalla2 = new THREE.Mesh(eyeForma2);
+		var bodyMalla= new THREE.Mesh(bodyForma);
+		var armMalla1 = new THREE.Mesh(armForma1);
+		var armMalla2 = new THREE.Mesh(armForma2);
+		var esferaMalla1 = new THREE.Mesh(esferaForma1);
+		var esferaMalla2 = new THREE.Mesh(esferaForma2);
+		var esferaMalla3= new THREE.Mesh(esferaForma3);
+		var esferaMalla4 = new THREE.Mesh(esferaForma4);
+		var esferaMalla5 = new THREE.Mesh(esferaForma5);
+		var esferaMalla6 = new THREE.Mesh(esferaForma6);
+		var esferaMalla7 = new THREE.Mesh(esferaForma7);
+
+		var meshForma = new THREE.Geometry();
+		meshForma.merge(headMalla.geometry, headMalla.matrix);
+		meshForma.merge(bodyMalla.geometry, bodyMalla.matrix);
+		meshForma.merge(eyeMalla1.geometry, eyeMalla1.matrix);
+		meshForma.merge(eyeMalla2.geometry, eyeMalla2.matrix);
+		meshForma.merge(armMalla1.geometry, armMalla1.matrix);
+		meshForma.merge(armMalla2.geometry, armMalla2.matrix);
+		meshForma.merge(cableMalla1.geometry, cableMalla1.matrix);
+		meshForma.merge(cableMalla2.geometry, cableMalla2.matrix);
+		meshForma.merge(esferaMalla1.geometry, esferaMalla1.matrix);
+		meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
+		meshForma.merge(esferaMalla3.geometry, esferaMalla3.matrix);
+		meshForma.merge(esferaMalla4.geometry, esferaMalla4.matrix);
+		meshForma.merge(esferaMalla5.geometry, esferaMalla5.matrix);
+		meshForma.merge(esferaMalla6.geometry, esferaMalla6.matrix);
+		meshForma.merge(esferaMalla7.geometry, esferaMalla7.matrix);
+
+		var material = new THREE.MeshNormalMaterial();
+		var mesh = new THREE.Mesh(meshForma, material);
+		
+		mesh.rotateY(Math.PI);
+	}
 	return mesh;
 }
-
 
 
 function setup(){
@@ -928,15 +809,17 @@ var mapa = new Array();
 
 	personaje = new Personaje(1);	
 
-	//Piso
-           	var piso = new THREE.BoxGeometry(48, 48, 0.2);
-            	var color1 = new THREE.Color(0xC9C9C9);
+	var piso = new THREE.BoxGeometry(48, 48, 0.2);
+        var color1 = new THREE.Color(0xC9C9C9);
 	piso.translate(0,0,-.6);
-           	var material = new THREE.MeshBasicMaterial(color1);
-            	material.color = color1;
-            	var pisoMalla = new THREE.Mesh(piso, material);
-	//
-
+        THREE.ImageUtils.crossOrigin = '';
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/ESPACIO1.jpg');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	//var material = new THREE.MeshBasicMaterial(color1);
+        //material.color = color1;
+       	var pisoMalla = new THREE.Mesh(piso, material);
+	
+	
 	// LIGHTS
 	//var light = new THREE.AmbientLight(0xffffff,0.5);
 	//scene.add(light);
