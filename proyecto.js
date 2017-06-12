@@ -806,7 +806,7 @@ var mapa = new Array();
         //var color1 = new THREE.Color(0xC9C9C9);
 	piso.translate(0,0,-.6);
         THREE.ImageUtils.crossOrigin = '';
- 	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PISOT.jpg');
+ 	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/SUELOTEX.jpg');
   	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
 	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL1.gif');
   	var material2 = new THREE.MeshBasicMaterial( {map: textura2} );
