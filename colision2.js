@@ -18,7 +18,7 @@ function setup() {
 	raycaster.setFromCamera( new THREE.Vector2(0, 0), camara );
 
 
-		var r= "/";
+		var r= "";
 		var urls=[r + "Future1.png", r + "Future2.png",
 			  r + "Future3.png", r + "Future4.png",
 			  r + "Future5.png", r + "Future6.png"
