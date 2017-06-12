@@ -18,17 +18,18 @@ function setup() {
 	raycaster.setFromCamera( new THREE.Vector2(0, 0), camara );
 
 
-		var r= "";
-		var urls=[r + "Future1.png", r + "Future2.png",
-			  r + "Future3.png", r + "Future4.png",
-			  r + "Future5.png", r + "Future6.png"
-			 ];
+	var escena = new THREE.Scene();
+	escena.background = new THREE.CubeTextureLoader()
+		//.setPath( 'textures/cubeMaps/' )
+		.load( [
+			'Future1.png',
+			'Future2.png',
+			'Future3.png',
+			'Future4.png',
+			'Future5.png',
+			'Future6.png'
+		] );
 		
-		var textureCube = new THREE.CubeTextureLoader().load(urls);
-		escena = new THREE.Scene();
-		escena.background =textureCube;
-	
-	
 
 
 	escena.add( cubo1 );
