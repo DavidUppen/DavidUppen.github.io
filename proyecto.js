@@ -729,7 +729,7 @@ function Personaje(t){
 		meshForma.merge(esferaMalla7.geometry, esferaMalla7.matrix);
 	}
 	THREE.ImageUtils.crossOrigin = '';
- 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/VIDRIO.jpg');
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
 	var mesh = new THREE.Mesh(meshForma, material);
 	mesh.rotateY(Math.PI);
@@ -808,7 +808,7 @@ var mapa = new Array();
         THREE.ImageUtils.crossOrigin = '';
  	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PISOT.jpg');
   	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
-	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/ESPACIO1.gif');
+	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL1.gif');
   	var material2 = new THREE.MeshBasicMaterial( {map: textura2} );
 	//var material = new THREE.MeshBasicMaterial(color1);
         //material.color = color1;
