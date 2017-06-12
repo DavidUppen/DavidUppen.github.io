@@ -464,7 +464,7 @@ Robot.prototype.operations.rotateCCW = function(robot, angle){
 
 function Wall(size,x=0,y=0){
 	THREE.ImageUtils.crossOrigin = '';
- 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL1.gif');
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL.jpg');
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
 	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), material);
 	this.size= size;
@@ -519,11 +519,6 @@ function Personaje(t){
 		meshForma.merge(baseMalla.geometry, baseMalla.matrix);
 		meshForma.merge(baseMalla2.geometry, baseMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
-
-		var material = new THREE.MeshNormalMaterial();
-		var mesh = new THREE.Mesh(meshForma, material);
-		mesh.rotateY(Math.PI);
-		
 	}
 	else if(t==2){
 		var headForma = new THREE.BoxGeometry( .9, 0.6, 0.45 );
@@ -589,11 +584,6 @@ function Personaje(t){
 		meshForma.merge(earMalla2.geometry, earMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
 		meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
-
-		var material = new THREE.MeshNormalMaterial();
-		var mesh = new THREE.Mesh(meshForma, material);
-
-		mesh.rotateY(Math.PI);	
 	}
 	else if(t==3){
 		var headForma = new THREE.BoxGeometry( .45, .45, .35 );
@@ -663,12 +653,6 @@ function Personaje(t){
 		meshForma.merge(shoulderMalla.geometry, shoulderMalla.matrix);
 		meshForma.merge(shoulderMalla2.geometry, shoulderMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
-
-		var material = new THREE.MeshNormalMaterial();
-		var mesh = new THREE.Mesh(meshForma, material);
-
-		mesh.rotateY(Math.PI);
-
 	}
 	if(t==4){
 		var headForma = new THREE.SphereGeometry( 0.35,30);
@@ -743,12 +727,13 @@ function Personaje(t){
 		meshForma.merge(esferaMalla5.geometry, esferaMalla5.matrix);
 		meshForma.merge(esferaMalla6.geometry, esferaMalla6.matrix);
 		meshForma.merge(esferaMalla7.geometry, esferaMalla7.matrix);
-
-		var material = new THREE.MeshNormalMaterial();
-		var mesh = new THREE.Mesh(meshForma, material);
-		
-		mesh.rotateY(Math.PI);
 	}
+	THREE.ImageUtils.crossOrigin = '';
+ 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/VIDRIO.jpg');
+  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	var mesh = new THREE.Mesh(meshForma, material);
+	mesh.rotateY(Math.PI);
+	
 	return mesh;
 }
 
@@ -757,67 +742,81 @@ function setup(){
 
 var mapa = new Array();
 
-	mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-	mapa[1] = "x_x_r_x____x__x________x__________r____________x";
-	mapa[2] = "x_x___x_r__x__x________x_______________________x";
-	mapa[3] = "x_x_r_x____x__x__r__x______xxxxxxxxxxxxxxxx____x";
-	mapa[4] = "x_x___x____x__x_____x_____x________________x___x";
-	mapa[5] = "x__r__x________x_________x_______xxxx_______x__x";
-	mapa[6] = "x___x_x________x_________x_______x__x___r___x__x";
-	mapa[7] = "x__x__x________x____x____x_______x__x_______x__x";
-	mapa[8] = "x_x_______r______________x___r__xx__xx______x__x";
-	mapa[9] = "x_x______________________x______x____x______x__x";
-	mapa[10] = "x__x_x_x_________________x_____xx_____xx____x__x";
-	mapa[11] = "xx_x___________x_________x_xxx_x______xxxxx_x__x";
-	mapa[12] = "x________r_____x_________x_x__________r___x_x__x";
-	mapa[13] = "x_______xx____x__________x_x____ x__x_____x_x__x";
-	mapa[14] ="x___xx________x____r_____x_xx____x__x____xx_x__x";
-	mapa[15] = "xx_x_______x_____________x__xx__________xx__x__x";
-	mapa[16] = "x__x_______x_____________x___xx___r____xx___x__x";
-	mapa[17] = "x_x__x_____x_____________x___xx________xx___x__x";
-	mapa[18] = "x_r___xxx__x_____________x___x__________x___x__x";
-	mapa[19] = "x____xx__________________x__xx____xx____xx__x__x";
-	mapa[20] = "x________________________x__x___xxxxxx___x__x__x";
-	mapa[21] = "xxxxxxxxx__x_r______r____x__x__xx_r__xx_____x__x";
-	mapa[22] = "xxxxxxxxx___xx___________x__xxxx______xxxx__x__x";
-	mapa[23] = "x________________________x______r___________x__x";
-	mapa[24] = "x_____r___________________x__x_____________x___x";
-	mapa[25] = "x__________________________xxxxxxx__xxxxxxx____x";
-	mapa[26] ="x________r_____________________________________x";
-	mapa[27] = "x_____xxxxxxxxxx__r____________________________x";
-	mapa[28] = "x    x_____r____x_________x_r__________________x";
-	mapa[29] = "x   x___xxxxxx___x__________x__________________x";
-	mapa[30] = "x   x__x______x__x_______________________r_____x";
-	mapa[31] = "x   x_x________x_x___________x_________________x";
-	mapa[32] = "x   x_x___r____x_x_____________________________x";
-	mapa[33] = "x   x_x___xx___x_x_____r__xxx__________________x";
-	mapa[34] = "x   x__xxxxx___x_x_______xx____________________x";
-	mapa[35] = "x   x____x____x__x___________________r_________x";
-	mapa[36]= "x___x_r__x___x___x_____________________________x";
-	mapa[37] = "x   x_____x_x____x_______r_____________________x"
-	mapa[38] = "x r x____x_r_x___x_____________________________x";
-	mapa[39] = "x   x_r__x___x___x_____________________________x"
-	mapa[40] = "x   x_____x_x____x___________xxxxxxx___________x";
-	mapa[41] = "x   x____________x____________________x________x";
-	mapa[42] = "x____x__________x_______________r______________x";
-	mapa[43]=  "x_____xxx____xxx_______________________________x";
-	mapa[44] = "x_______________________________________x______x";
-	mapa[45] = "x____r__________________________r______________x";
-	mapa[46] = "x______________________________________________x";
-	mapa[47] ="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	mapa[0] = "________________________________________________";
+	mapa[1] = "__x_r_x____x__x________x__________r_____________";
+	mapa[2] = "__x___x_r__x__x________x________________________";
+	mapa[3] = "__x_r_x____x__x__r__x______xxxxxxxxxxxxxxxx_____";
+	mapa[4] = "__x___x____x__x_____x_____x________________x____";
+	mapa[5] = "___r__x________x_________x_______xxxx_______x___";
+	mapa[6] = "____x_x________x_________x_______x__x___r___x___";
+	mapa[7] = "___x__x________x____x____x_______x__x_______x___";
+	mapa[8] = "__x_______r______________x___r__xx__xx______x___";
+	mapa[9] = "__x______________________x______x____x______x___";
+	mapa[10] = "___x_x_x_________________x_____xx_____xx____x___";
+	mapa[11] = "_x_x___________x_________x_xxx_x______xxxxx_x___";
+	mapa[12] = "_________r_____x_________x_x__________r___x_x___";
+	mapa[13] = "________xx____x__________x_x____ x__x_____x_x___";
+	mapa[14] ="____xx________x____r_____x_xx____x__x____xx_x___";
+	mapa[15] = "_x_x_______x_____________x__xx__________xx__x___";
+	mapa[16] = "___x_______x_____________x___xx___r____xx___x___";
+	mapa[17] = "__x__x_____x_____________x___xx________xx___x___";
+	mapa[18] = "__r___xxx__x_____________x___x__________x___x___";
+	mapa[19] = "_____xx__________________x__xx____xx____xx__x___";
+	mapa[20] = "_________________________x__x___xxxxxx___x__x___";
+	mapa[21] = "_xxxxxxxx__x_r______r____x__x__xx_r__xx_____x___";
+	mapa[22] = "_xxxxxxxx___xx___________x__xxxx______xxxx__x___";
+	mapa[23] = "_________________________x______r___________x___";
+	mapa[24] = "______r___________________x__x_____________x____";
+	mapa[25] = "___________________________xxxxxxx__xxxxxxx_____";
+	mapa[26] ="_________r______________________________________";
+	mapa[27] = "______xxxxxxxxxx__r_____________________________";
+	mapa[28] = "_    x_____r____x_________x_r___________________";
+	mapa[29] = "_   x___xxxxxx___x__________x___________________";
+	mapa[30] = "_   x__x______x__x_______________________r______";
+	mapa[31] = "_   x_x________x_x___________x__________________";
+	mapa[32] = "_   x_x___r____x_x______________________________";
+	mapa[33] = "_   x_x___xx___x_x_____r__xxx___________________";
+	mapa[34] = "_   x__xxxxx___x_x_______xx_____________________";
+	mapa[35] = "_   x____x____x__x___________________r__________";
+	mapa[36]= "____x_r__x___x___x______________________________";
+	mapa[37] = "_   x_____x_x____x_______r______________________"
+	mapa[38] = "_ r x____x_r_x___x______________________________";
+	mapa[39] = "_   x_r__x___x___x______________________________"
+	mapa[40] = "_   x_____x_x____x___________xxxxxxx____________";
+	mapa[41] = "_   x____________x____________________x_________";
+	mapa[42] = "_____x__________x_______________r_______________";
+	mapa[43]=  "______xxx____xxx________________________________";
+	mapa[44] = "________________________________________x_______";
+	mapa[45] = "_____r__________________________r_______________";
+	mapa[46] = "________________________________________________";
+	mapa[47] ="________________________________________________";
 
 
 	personaje = new Personaje(1);	
 
 	var piso = new THREE.BoxGeometry(48, 48, 0.2);
-        var color1 = new THREE.Color(0xC9C9C9);
+	var pared1 = new THREE.BoxGeometry(48, 1, 15);
+	var pared2 = new THREE.BoxGeometry(1, 48, 15);
+	var pared3 = new THREE.BoxGeometry(48, 1, 15);
+	var pared4 = new THREE.BoxGeometry(1, 48, 15);
+	pared1.translate(0,24,0);
+	pared2.translate(24,0,0);
+	pared3.translate(0,-24,0);
+	pared4.translate(-24,0,0);
+        //var color1 = new THREE.Color(0xC9C9C9);
 	piso.translate(0,0,-.6);
         THREE.ImageUtils.crossOrigin = '';
- 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/ESPACIO1.jpg');
-  	var material = new THREE.MeshBasicMaterial( {map: textura} );
+ 	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PISOT.jpg');
+  	var material1 = new THREE.MeshBasicMaterial( {map: textura} );
+	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/ESPACIO1.gif');
+  	var material2 = new THREE.MeshBasicMaterial( {map: textura} );
 	//var material = new THREE.MeshBasicMaterial(color1);
         //material.color = color1;
        	var pisoMalla = new THREE.Mesh(piso, material);
+	var pared1Malla = new THREE.Mesh(pared1, material2);
+	var pared2Malla = new THREE.Mesh(pared2, material2);
+	var pared3Malla = new THREE.Mesh(pared3, material2);
+	var pared4Malla = new THREE.Mesh(pared4, material2);
 	
 	
 	// LIGHTS
@@ -840,6 +839,11 @@ var mapa = new Array();
 	environment.setMap(mapa);
 	environment.add(personaje);
 	environment.add(pisoMalla);
+	environment.add(pared1Malla);
+	environment.add(pared2Malla);
+	environment.add(pared3Malla);
+	environment.add(pared4Malla);
+	
 	//environment.add(light);
 
 	raycaster[0]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,0,0));
