@@ -814,9 +814,9 @@ var mapa = new Array();
   	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
 	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED1.jpg');
   	var material2 = new THREE.MeshBasicMaterial( {map: textura2} );
-	var textura3 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED2.jpg');
+	var textura3 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED3.jpg');
   	var material3 = new THREE.MeshBasicMaterial( {map: textura3} );
-	var textura4 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED3.jpg');
+	var textura4 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED2.jpg');
   	var material4 = new THREE.MeshBasicMaterial( {map: textura4} );
 	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED4.jpg');
   	var material5 = new THREE.MeshBasicMaterial( {map: textura5} );
@@ -824,9 +824,9 @@ var mapa = new Array();
         //material.color = color1;
        	var pisoMalla = new THREE.Mesh(piso, material1);
 	var pared1Malla = new THREE.Mesh(pared1, material2);
-	var pared2Malla = new THREE.Mesh(pared2, material2);
-	var pared3Malla = new THREE.Mesh(pared3, material2);
-	var pared4Malla = new THREE.Mesh(pared4, material2);
+	var pared2Malla = new THREE.Mesh(pared2, material3);
+	var pared3Malla = new THREE.Mesh(pared3, material4);
+	var pared4Malla = new THREE.Mesh(pared4, material5);
 	
 	
 	// LIGHTS
