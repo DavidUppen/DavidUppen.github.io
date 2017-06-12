@@ -894,10 +894,22 @@ var mapa = new Array();
 function loop(){
 	
 	var id;
+	var demo= true;
 	id = requestAnimationFrame(loop);
 
 	var intersects = new Array();
 	
+	if (demo){
+		if(camera.position.y<-2.5){
+			camera.position.y+=.8;
+			if (camera.position.y>-80 && camera.position.z>1.6)
+				camera.position.z-=0.4;
+		}
+		else{
+			demo= false;
+		}
+	}
+
 	for(i=0;i<8;i++){
 		intersects[i] = raycaster[i].intersectObjects( environment.children,true);
 		if (intersects[i].length > 0 &&  intersects[i][0].distance <= .5){
