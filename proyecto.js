@@ -828,7 +828,6 @@ var mapa = new Array();
 	var pared3Malla = new THREE.Mesh(pared3, material4);
 	var pared4Malla = new THREE.Mesh(pared4, material5);
 	
-	
 	// LIGHTS
 	//var light = new THREE.AmbientLight(0xffffff,0.5);
 	//scene.add(light);
@@ -866,8 +865,8 @@ var mapa = new Array();
 	raycaster[7]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,-1,0));
 
 	camera= new THREE.PerspectiveCamera();
-	camera.position.z=1.5;
-	camera.position.y=-2;
+	camera.position.z=15.5;
+	camera.position.y=-152;
 	camera.rotateX(Math.PI/2);
 	camera.rotateX(-Math.PI/8);
 
@@ -902,8 +901,8 @@ function loop(){
 	if (demo){
 		if(camera.position.y<-2.5){
 			camera.position.y+=.8;
-			if (camera.position.y>-80 && camera.position.z>1.6)
-				camera.position.z-=0.4;
+			if (camera.position.y>-50 && camera.position.z>1.6)
+				camera.position.z-=0.3;
 		}
 		else{
 			demo= false;
