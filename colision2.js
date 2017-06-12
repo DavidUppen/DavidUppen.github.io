@@ -18,9 +18,9 @@ function setup() {
 	raycaster.setFromCamera( new THREE.Vector2(0, 0), camara );
 
 
-	var escena = new THREE.Scene();
+	escena = new THREE.Scene();
 	escena.background = new THREE.CubeTextureLoader()
-		//.setPath( 'textures/cubeMaps/' )
+		.setPath( '/' )
 		.load( [
 			'Future1.png',
 			'Future2.png',
