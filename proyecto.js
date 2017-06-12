@@ -865,8 +865,8 @@ var mapa = new Array();
 	raycaster[7]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,-1,0));
 
 	camera= new THREE.PerspectiveCamera();
-	camera.position.z=15.5;
-	camera.position.y=-152;
+	camera.position.z=1.5;
+	camera.position.y=-2;
 	camera.rotateX(Math.PI/2);
 	camera.rotateX(-Math.PI/8);
 
@@ -897,17 +897,6 @@ function loop(){
 
 	var intersects = new Array();
 	
-	if (demo){
-		if(camera.position.y<-2.5){
-			camera.position.y+=.8;
-			if (camera.position.y>-50 && camera.position.z>1.6)
-				camera.position.z-=0.3;
-		}
-		else{
-			demo= false;
-		}
-	}
-
 	for(i=0;i<8;i++){
 		intersects[i] = raycaster[i].intersectObjects( environment.children,true);
 		if (intersects[i].length > 0 &&  intersects[i][0].distance <= .5){
@@ -929,7 +918,7 @@ function loop(){
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0,demo= true;
+var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0;
 
 setup();
 loop();
