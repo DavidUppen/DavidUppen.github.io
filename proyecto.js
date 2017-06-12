@@ -929,7 +929,7 @@ function loop(){
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0,demo= false;
+var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0,demo= true;
 
 setup();
 loop();
