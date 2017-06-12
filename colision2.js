@@ -22,8 +22,8 @@ function setup() {
 
 escena = new THREE.Scene();
 escena.background = new THREE.CubeTextureLoader();
-	.setPath( 'http://daviduppen.github.io' )
-	.load( [
+	escena.background.setPath( 'http://daviduppen.github.io' )
+	escena.background.load( [
 		'http://daviduppen.github.io/Future1.png',
 		'http://daviduppen.github.io/Future2.png',
 		'http://daviduppen.github.io/Future3.png',
