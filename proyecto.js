@@ -844,7 +844,7 @@ var mapa = new Array();
   	var material4 = new THREE.MeshBasicMaterial( {map: textura4} );
 	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED4.jpg');
   	var material5 = new THREE.MeshBasicMaterial( {map: textura5} );
-	var material = new THREE.MeshBasicMaterial(color1);
+	//var material = new THREE.MeshBasicMaterial(color1);
         
 	
 	//var color1 = new THREE.Color(0xC9C9C9);
@@ -852,10 +852,10 @@ var mapa = new Array();
 	//material.color = color1;
 
        	var pisoMalla = new THREE.Mesh(piso, material);
-	var pared1Malla = new THREE.Mesh(pared1, material);
-	var pared2Malla = new THREE.Mesh(pared2, material);
-	var pared3Malla = new THREE.Mesh(pared3, material);
-	var pared4Malla = new THREE.Mesh(pared4, material);
+	var pared1Malla = new THREE.Mesh(pared1, materia2);
+	var pared2Malla = new THREE.Mesh(pared2, materia3);
+	var pared3Malla = new THREE.Mesh(pared3, materia4);
+	var pared4Malla = new THREE.Mesh(pared4, materia5);
 	
 	// LIGHTS
 	//var light = new THREE.AmbientLight(0xffffff,0.5);
