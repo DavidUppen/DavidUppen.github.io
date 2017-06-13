@@ -851,11 +851,11 @@ var mapa = new Array();
 	//material = new THREE.MeshBasicMaterial();
 	//material.color = color1;
 
-       	var pisoMalla = new THREE.Mesh(piso, material);
-	var pared1Malla = new THREE.Mesh(pared1, materia2);
-	var pared2Malla = new THREE.Mesh(pared2, materia3);
-	var pared3Malla = new THREE.Mesh(pared3, materia4);
-	var pared4Malla = new THREE.Mesh(pared4, materia5);
+       	var pisoMalla = new THREE.Mesh(piso, material1);
+	var pared1Malla = new THREE.Mesh(pared1, material2);
+	var pared2Malla = new THREE.Mesh(pared2, material3);
+	var pared3Malla = new THREE.Mesh(pared3, material4);
+	var pared4Malla = new THREE.Mesh(pared4, material5);
 	
 	// LIGHTS
 	//var light = new THREE.AmbientLight(0xffffff,0.5);
