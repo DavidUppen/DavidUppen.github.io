@@ -5,7 +5,7 @@ var listener = function() {
 }
 function push(e) {
 
-	if(pause!=1){				
+	//if(pause!=1){				
 		if (e.keyCode===104 || e.keyCode===87){			// W, NUM8	(Arriba)			
 			if(derecha===0 && izquierda===0){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
@@ -110,7 +110,7 @@ function push(e) {
 				}
 			}
 		}
-	}
+	//}
 	if (e.keyCode===100||e.keyCode===65){			// A, NUM4	(Camara Izquierda)
 		camera.rotateX(rotation*(-Math.PI/32));
 		camera.rotateX(Math.PI/8);
@@ -146,8 +146,6 @@ function push(e) {
 			camera.position.y=personaje.position.y;
 			camera.position.x=personaje.position.x+k;	
 		}
-		console.log(derecha);
-		console.log(izquierda);
 	}
 	else if (e.keyCode===102||e.keyCode===68){		// D, NUM6	(Camara Derecha)	
 		camera.rotateX(rotation*(-Math.PI/32));
@@ -184,8 +182,7 @@ function push(e) {
 			camera.position.y=personaje.position.y;
 			camera.position.x=personaje.position.x+k;	
 		}
-		console.log(derecha);
-		console.log(izquierda);
+
 	}
 	else if (e.keyCode===54){			//6	(Aleja CamaraX)
 		camera.position.x-=.2;
@@ -228,7 +225,6 @@ function push(e) {
 		}	
 	}
 	//else{						//	(Muestra Código ASCII Obtenido)
-		console.log(e.keyCode);
 		//console.log(e.keyCode);
 	//}
 }
@@ -367,6 +363,9 @@ function Robot(size,x=0,y=0){
 	Agent.call(this,x,y);
 	
 	this.sensor= new Sensor();
+	this.sensor2= new Sensor();
+	this.sensor3= new Sensor();
+	this.sensor4= new Sensor();
 	this.actuator= new WallE();
 	this.actuator.commands={};
 	this.add(this.actuator);
@@ -378,13 +377,34 @@ Robot.prototype= new Agent();
 
 
 Robot.prototype.sense= function(environment){
-	this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
-	var obstaculo = this.sensor.intersectObjects(environment.children,true);
 
-	if((obstaculo.length >0 && (obstaculo[0].distance <= .7)))
+	this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+	this.sensor2.set(this.position, new THREE.Vector3(-Math.cos(this.rotation.z),-Math.sin(this.rotation.z),0));
+	this.sensor3.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
+	this.sensor4.set(this.position, new THREE.Vector3(-Math.sin(this.rotation.z),-Math.cos(this.rotation.z),0));
+	
+	var obstaculo = this.sensor.intersectObjects(environment.children,true);
+	var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
+	var obstaculo3 = this.sensor3.intersectObjects(environment.children,true);
+	var obstaculo4 = this.sensor4.intersectObjects(environment.children,true);
+
+	if((obstaculo.length >0 && (obstaculo[0].distance <= .8))){
 		this.sensor.colision= true;
-	else
+	}
+	else{
 		this.sensor.colision= false;
+	}
+
+	if((obstaculo.length >0 && (obstaculo[0].distance <= .9))||(obstaculo2.length >0 && (obstaculo2[0].distance <= .9))||(obstaculo3.length >0 && (obstaculo3[0].distance <= 1.6))||(obstaculo4.length >0 && (obstaculo4[0].distance <= 1.6))){
+		if((personaje.position.x)-(this.position.x)<1.2 && ((personaje.position.x)-(this.position.x)>-1.2)){
+			if((personaje.position.y)-(this.position.y)<1 && ((personaje.position.y)-(this.position.y)>-1)){
+				environment.remove(this);
+				console.log(123);		
+			}
+		}
+
+	}
+
 };
 
 
@@ -466,6 +486,7 @@ function Wall(size,x=0,y=0){
 	THREE.ImageUtils.crossOrigin = '';
  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/WALL.jpg');
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	//material= new THREE.MeshNormalMaterial();
 	THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10*size), material);
 	this.size= size;
 	this.position.x= x;
@@ -731,6 +752,7 @@ function Personaje(t){
 	THREE.ImageUtils.crossOrigin = '';
  	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
+	//material= new THREE.MeshNormalMaterial();
 	var mesh = new THREE.Mesh(meshForma, material);
 	mesh.rotateY(Math.PI);
 	
@@ -807,8 +829,10 @@ var mapa = new Array();
 	pared2.translate(26,0,9);
 	pared3.translate(0,-26,9);
 	pared4.translate(-26,0,9);
-        //var color1 = new THREE.Color(0xC9C9C9);
+        
+	
 	piso.translate(0,0,-.6);
+
         THREE.ImageUtils.crossOrigin = '';
  	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/SUELOTEX.jpg');
   	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
@@ -820,13 +844,18 @@ var mapa = new Array();
   	var material4 = new THREE.MeshBasicMaterial( {map: textura4} );
 	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED4.jpg');
   	var material5 = new THREE.MeshBasicMaterial( {map: textura5} );
-	//var material = new THREE.MeshBasicMaterial(color1);
-        //material.color = color1;
-       	var pisoMalla = new THREE.Mesh(piso, material1);
-	var pared1Malla = new THREE.Mesh(pared1, material2);
-	var pared2Malla = new THREE.Mesh(pared2, material3);
-	var pared3Malla = new THREE.Mesh(pared3, material4);
-	var pared4Malla = new THREE.Mesh(pared4, material5);
+	var material = new THREE.MeshBasicMaterial(color1);
+        
+	
+	//var color1 = new THREE.Color(0xC9C9C9);
+	//material = new THREE.MeshBasicMaterial();
+	//material.color = color1;
+
+       	var pisoMalla = new THREE.Mesh(piso, material);
+	var pared1Malla = new THREE.Mesh(pared1, material);
+	var pared2Malla = new THREE.Mesh(pared2, material);
+	var pared3Malla = new THREE.Mesh(pared3, material);
+	var pared4Malla = new THREE.Mesh(pared4, material);
 	
 	// LIGHTS
 	//var light = new THREE.AmbientLight(0xffffff,0.5);
@@ -897,8 +926,9 @@ function loop(){
 
 	var intersects = new Array();
 	
+
 	for(i=0;i<8;i++){
-		intersects[i] = raycaster[i].intersectObjects( environment.children,true);
+		intersects[i] = raycaster[i].intersectObjects(environment.children,true);
 		if (intersects[i].length > 0 &&  intersects[i][0].distance <= .5){
 			impact[i]= 1;
 		} 
