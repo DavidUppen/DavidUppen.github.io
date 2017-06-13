@@ -821,14 +821,14 @@ var mapa = new Array();
 	personaje = new Personaje(1);	
 
 	var piso = new THREE.BoxGeometry(52, 52, 0.2);
-	var pared1 = new THREE.BoxGeometry(52, 1, 20);
-	var pared2 = new THREE.BoxGeometry(1, 52, 20);
-	var pared3 = new THREE.BoxGeometry(52, 1, 20);
-	var pared4 = new THREE.BoxGeometry(1, 52, 20);
-	pared1.translate(0,26,9);
-	pared2.translate(26,0,9);
-	pared3.translate(0,-26,9);
-	pared4.translate(-26,0,9);
+	var pared1 = new THREE.BoxGeometry(52, 1, 30);
+	var pared2 = new THREE.BoxGeometry(1, 52, 30);
+	var pared3 = new THREE.BoxGeometry(52, 1, 30);
+	var pared4 = new THREE.BoxGeometry(1, 52, 30);
+	pared1.translate(0,26,14);
+	pared2.translate(26,0,14);
+	pared3.translate(0,-26,14);
+	pared4.translate(-26,0,14);
         
 	
 	piso.translate(0,0,-.6);
