@@ -818,17 +818,17 @@ var mapa = new Array();
 	mapa[51] ="____________________________________________________";
 
 
-	personaje = new Personaje(1);	
+	personaje = new Personaje(3);	
 
 	var piso = new THREE.BoxGeometry(52, 52, 0.2);
-	var pared1 = new THREE.BoxGeometry(52, 1, 30);
-	var pared2 = new THREE.BoxGeometry(1, 52, 30);
-	var pared3 = new THREE.BoxGeometry(52, 1, 30);
-	var pared4 = new THREE.BoxGeometry(1, 52, 30);
-	pared1.translate(0,26,14);
-	pared2.translate(26,0,14);
-	pared3.translate(0,-26,14);
-	pared4.translate(-26,0,14);
+	var pared1 = new THREE.BoxGeometry(52, 1, 50);
+	var pared2 = new THREE.BoxGeometry(1, 52, 50);
+	var pared3 = new THREE.BoxGeometry(52, 1, 50);
+	var pared4 = new THREE.BoxGeometry(1, 52, 50);
+	pared1.translate(0,26,24);
+	pared2.translate(26,0,24);
+	pared3.translate(0,-26,24);
+	pared4.translate(-26,0,24);
         
 	
 	piso.translate(0,0,-.6);
@@ -838,11 +838,11 @@ var mapa = new Array();
   	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
 	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED1.jpg');
   	var material2 = new THREE.MeshBasicMaterial( {map: textura2} );
-	var textura3 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED3.jpg');
+	var textura3 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/saturno.jpg');
   	var material3 = new THREE.MeshBasicMaterial( {map: textura3} );
 	var textura4 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED2.jpg');
   	var material4 = new THREE.MeshBasicMaterial( {map: textura4} );
-	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED4.jpg');
+	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/astro.jpg');
   	var material5 = new THREE.MeshBasicMaterial( {map: textura5} );
 	//var material = new THREE.MeshBasicMaterial(color1);
         
