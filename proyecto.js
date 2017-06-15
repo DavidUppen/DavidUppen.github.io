@@ -259,7 +259,7 @@ function push(e) {
 	}
 	else if (e.keyCode===72){			//H	(Cambio Personaje)
 				
-		if (t>=5){
+		if (t>5){
 			t=1;
 		}
 		x= personaje.position.x;
@@ -608,7 +608,7 @@ function Personaje(t){
 		meshForma.merge(baseMalla.geometry, baseMalla.matrix);
 		meshForma.merge(baseMalla2.geometry, baseMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
-		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/toxic.jpg');
 
 	}
 	else if(t==2){
@@ -675,7 +675,7 @@ function Personaje(t){
 		meshForma.merge(earMalla2.geometry, earMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
 		meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
-		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/oro.jpg');
 	}
 	else if(t==3){
 		var headForma = new THREE.BoxGeometry( .45, .45, .35 );
@@ -824,10 +824,10 @@ function Personaje(t){
 		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/LAVA.jpg');
 
 	}
-	//else if(t==5){
-		
-	
-	//}
+	else if(t==5){
+		var meshForma= new THREE.BoxGeometry(1,1,1);	
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/CARA.jpg');
+	}
 	
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
 	//material= new THREE.MeshNormalMaterial();
@@ -997,14 +997,27 @@ var mapa = new Array();
 
 	var tipoEvento = 'resize';
 	var capturar = false;
+		
 
+	window.alert("Consigue acabar con todos tus enemigos antes de que transcurran 5 minutos !!\nTu tiempo comienza al presionar aceptar.\n\nControl Personaje => (W,Q,E,S)\nControl Camara => (3,4,5,6,7,8,9,0)\nCambio de perspectiva (Giro) => (A,D)\nCambio Personaje => (H)\nCamara Default => L");
+
+	clk= new THREE.Clock();
 	window.addEventListener( tipoEvento, listener, capturar);
 	window.addEventListener( 'keydown',push, false);
 }
 
 
 function loop(){
+
 	
+	var time= clk.getElapsedTime();
+	
+	if(time>=330qqqqqqq && fin==0){
+		window.alert("Has perdido :c \nRecarga la pagina (F5)");
+		fin=1;
+	}
+	
+
 	var id;
 	id = requestAnimationFrame(loop);
 
@@ -1026,7 +1039,9 @@ function loop(){
 	environment.plan();
 	environment.act();
 
-	renderer.render(environment, camera);
+	if(fin==0){
+		renderer.render(environment, camera);
+	}
 }
 
 
@@ -1034,7 +1049,8 @@ var cuboMalla;
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1;
+var derecha=0, izquierda=0,rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1, clk;
+var fin= 0;
 
 setup();
 loop();
