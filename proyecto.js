@@ -10,104 +10,136 @@ function push(e) {
 		if (e.keyCode===104 || e.keyCode===87){			// W, NUM8	(Arriba)			
 			if(derecha===0 && izquierda===0){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.35;
-					camera.position.y+=.35;
+					if(personaje.position.y<=25.2){
+						personaje.position.y+=.35;
+						camera.position.y+=.35;
+					}
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.35;
-					camera.position.x+=.35;
+					if(personaje.position.x<=24.8){
+						personaje.position.x+=.35;
+						camera.position.x+=.35;
+					}
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.35;
-					camera.position.y-=.35;
+					if(personaje.position.y>=-25.2){
+						personaje.position.y-=.35;
+						camera.position.y-=.35;
+					}
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.35;
-					camera.position.x-=.35;
+					if(personaje.position.x>=-24.8){
+						personaje.position.x-=.35;
+						camera.position.x-=.35;
+					}
 				}
 			}	
 		}
 		else if (e.keyCode===98||e.keyCode===83){		// S, NUM2	(Abajo)
 			if(derecha===0 && izquierda===0){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.35;
-					camera.position.y-=.35;
+					if(personaje.position.y>=-25.2){
+						personaje.position.y-=.35;
+						camera.position.y-=.35;
+					}
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.35;
-					camera.position.x-=.35;
+					if(personaje.position.x>=-24.8){
+						personaje.position.x-=.35;
+						camera.position.x-=.35;
+					}
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.35;
-					camera.position.y+=.35;
+					if(personaje.position.y<=25.2){	
+						personaje.position.y+=.35;
+						camera.position.y+=.35;
+					}
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.35;
-					camera.position.x+=.35;
+					if(personaje.position.x<=24.8){
+						personaje.position.x+=.35;
+						camera.position.x+=.35;
+					}
 				}
 			}
 		}
 		else if (e.keyCode===69){				// E		(Derecha)
 			if(derecha===0 && izquierda===0){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.35;
-					camera.position.x+=.35;
+					if(personaje.position.x<=24.8){
+						personaje.position.x+=.35;
+						camera.position.x+=.35;
+					}
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.35;
-					camera.position.y-=.35;
+					if(personaje.position.y>=-25.2){
+						personaje.position.y-=.35;
+						camera.position.y-=.35;
+					}
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.35;
-					camera.position.x-=.35;
+					if(personaje.position.x>=-24.8){
+						personaje.position.x-=.35;
+						camera.position.x-=.35;
+					}
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.35;
-					camera.position.y+=.35;
+					if(personaje.position.y<=25.2){
+						personaje.position.y+=.35;
+						camera.position.y+=.35;
+					}
 				}
 			}
 		}
 		else if (e.keyCode===81){				//Q		(Izquierda)
 			if(derecha===0 && izquierda===0){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.35;
-					camera.position.x-=.35;
+					if(personaje.position.x>=-24.8){
+						personaje.position.x-=.35;
+						camera.position.x-=.35;
+					}
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.35;
-					camera.position.y+=.35;
+					if(personaje.position.y<=25.2){
+						personaje.position.y+=.35;
+						camera.position.y+=.35;
+					}
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.35;
-					camera.position.x+=.35;
+					if(personaje.position.x<=24.8){
+						personaje.position.x+=.35;
+						camera.position.x+=.35;
+					}
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.35;
-					camera.position.y-=.35;
+					if(personaje.position.y>=-25.2){
+						personaje.position.y-=.35;
+						camera.position.y-=.35;
+					}
 				}
 			}
 		}
@@ -225,8 +257,33 @@ function push(e) {
 			def=0;
 		}	
 	}
+	else if (e.keyCode===72){			//H	(Cambio Personaje)
+				
+		if (t>=5){
+			t=1;
+		}
+		x= personaje.position.x;
+		y= personaje.position.y;
+		environment.remove(personaje);
+		personaje= new Personaje(t);
+		personaje.position.x= x;
+		personaje.position.y=y;
+		environment.add(personaje);		
+		if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
+			personaje.rotateZ(Math.PI/2);	
+		}
+		else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
+			personaje.rotateZ(Math.PI);		
+		}
+		else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
+			personaje.rotateZ(3*Math.PI/2);		
+		}
+
+		t++;
+	}
 	else{						//	(Muestra Código ASCII Obtenido)
-		console.log(e.keyCode);
+		//console.log(personaje.position.x);
+		//console.log(personaje.position.y);
 	}
 }
 
@@ -252,6 +309,12 @@ function getRandomArbitrary(min, max) {			//	(Obtención Números Aleatorios)
 function Environment(){					//	(Declaración Ambiente)
 
 	THREE.Scene.call(this);
+	var path= '';
+	var sides= [path + 'UNIVERSO1.jpg', path + 'UNIVERSO2.jpg', path + 'UNIVERSO1.jpg', path + 'UNIVERSO2.jpg', path + 'UNIVERSO1.jpg', path + 'UNIVERSO2.jpg'];	
+	var scnCube = new THREE.CubeTextureLoader().load(sides);
+
+	scnCube.format= THREE.RGBFormat;
+	this.background= scnCube
 
 }
 
@@ -768,10 +831,24 @@ function Personaje(t){
 	
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
 	//material= new THREE.MeshNormalMaterial();
-	var mesh = new THREE.Mesh(meshForma, material);
-	mesh.rotateY(Math.PI);
+	var personaje = new THREE.Mesh(meshForma, material);
+	personaje.rotateY(Math.PI);
 	
-	return mesh;
+
+	raycaster[0]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,0,0));
+	raycaster[1]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,0,0));
+	raycaster[2]= new THREE.Raycaster( personaje.position, new THREE.Vector3(0,1,0));
+	raycaster[3]= new THREE.Raycaster( personaje.position, new THREE.Vector3(0,-1,0));
+	raycaster[4]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,1,0));
+	raycaster[5]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,1,0));
+	raycaster[6]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,-1,0));
+	raycaster[7]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,-1,0));
+
+	personaje.castShadow=true;
+
+
+
+	return personaje;
 }
 
 
@@ -834,7 +911,7 @@ var mapa = new Array();
 
 
 
-	personaje = new Personaje(3);	
+	personaje = new Personaje(1);	
 
 	var piso = new THREE.BoxGeometry(52, 52, 0.2);
 	piso.translate(0,0,-.6);
@@ -891,15 +968,8 @@ var mapa = new Array();
 	environment.add(pared4Malla);
 	environment.add(iluminacion);
 	
+		
 
-	raycaster[0]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,0,0));
-	raycaster[1]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,0,0));
-	raycaster[2]= new THREE.Raycaster( personaje.position, new THREE.Vector3(0,1,0));
-	raycaster[3]= new THREE.Raycaster( personaje.position, new THREE.Vector3(0,-1,0));
-	raycaster[4]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,1,0));
-	raycaster[5]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,1,0));
-	raycaster[6]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,-1,0));
-	raycaster[7]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,-1,0));
 
 	camera= new THREE.PerspectiveCamera();
 	camera.position.z=1.5;
@@ -915,7 +985,7 @@ var mapa = new Array();
 	environment.add(camera);
 
 	renderer.shadowMapEnabled=true;
-	personaje.castShadow=true;	
+
 	pared1Malla.castShadow= true;
 	pared2Malla.castShadow= true;
 	pared3Malla.castShadow= true;
@@ -964,7 +1034,7 @@ var cuboMalla;
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0, cubo;
+var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1;
 
 setup();
 loop();
