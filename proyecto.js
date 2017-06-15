@@ -1017,7 +1017,7 @@ function loop(){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
 	}
-	if(cont= 40){
+	if(cont== 40){
 		window.alert("Has ganado c: \nRecarga la pagina (F5)");
 		fin=1;			
 	}
