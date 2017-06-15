@@ -999,7 +999,7 @@ var mapa = new Array();
 	var capturar = false;
 		
 
-	window.alert("Consigue acabar con todos tus enemigos antes de que transcurran 5 minutos !!\nTu tiempo comienza al presionar aceptar.\n\nControl Personaje => (W,Q,E,S)\nControl Camara => (3,4,5,6,7,8,9,0)\nCambio de perspectiva (Giro) => (A,D)\nCambio Personaje => (H)\nCamara Default => L");
+	window.alert("Consigue acabar con todos tus enemigos antes de que transcurran 8 minutos !!\nTu tiempo comienza al presionar aceptar.\n\nControl Personaje => (W,Q,E,S)\nControl Camara => (3,4,5,6,7,8,9,0)\nCambio de perspectiva (Giro) => (A,D)\nCambio Personaje => (H)\nCamara Default => L");
 
 	clk= new THREE.Clock();
 	window.addEventListener( tipoEvento, listener, capturar);
@@ -1012,7 +1012,7 @@ function loop(){
 	
 	var time= clk.getElapsedTime();
 	
-	if(time>=330 && fin==0){
+	if(time>=480 && fin==0){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
 	}
