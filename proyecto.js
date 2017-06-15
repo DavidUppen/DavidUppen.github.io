@@ -351,7 +351,8 @@ Environment.prototype.setMap= function(map) {
 			if (map[i][j]=== "x")
 				this.add(new Wall(1,j - _offset-.5, -(i- _offset-.5)));
 			else if(map[i][j] ==="r")
-				this.add (new Robot(0.4, j- _offset, -(i- _offset)));		
+				this.add (new Robot(0.4, j- _offset, -(i- _offset)));
+				totalrobot+=1;
 		}
 };
 
@@ -1017,7 +1018,7 @@ function loop(){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
 	}
-	if(cont== 40){
+	if(cont== totalrobot){
 		window.alert("Has ganado c: \nRecarga la pagina (F5)");
 		fin=1;			
 	}
@@ -1054,7 +1055,7 @@ var cuboMalla;
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0,rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1, cont=0, clk;
+var derecha=0, izquierda=0,rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1, cont=0, clk, totalrobot=0;
 var fin= 0;
 
 setup();
