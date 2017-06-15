@@ -464,6 +464,7 @@ Robot.prototype.sense= function(environment){
 	if((obstaculo.length >0 && (obstaculo[0].distance <= .9))||(obstaculo2.length >0 && (obstaculo2[0].distance <= .9))||(obstaculo3.length >0 && (obstaculo3[0].distance <= 1.6))||(obstaculo4.length >0 && (obstaculo4[0].distance <= 1.6))){
 		if((personaje.position.x)-(this.position.x)<1.2 && ((personaje.position.x)-(this.position.x)>-1.2)){
 			if((personaje.position.y)-(this.position.y)<1 && ((personaje.position.y)-(this.position.y)>-1)){
+				cont+=1;
 				environment.remove(this);		
 			}
 		}
@@ -999,7 +1000,7 @@ var mapa = new Array();
 	var capturar = false;
 		
 
-	window.alert("Consigue acabar con todos tus enemigos antes de que transcurran 8 minutos !!\nTu tiempo comienza al presionar aceptar.\n\nControl Personaje => (W,Q,E,S)\nControl Camara => (3,4,5,6,7,8,9,0)\nCambio de perspectiva (Giro) => (A,D)\nCambio Personaje => (H)\nCamara Default => L");
+	window.alert("Consigue acabar con todos tus enemigos antes de que transcurran 9 minutos !!\nTu tiempo comienza al presionar aceptar.\n\nControl Personaje => (W,Q,E,S)\nControl Camara => (3,4,5,6,7,8,9,0)\nCambio de perspectiva (Giro) => (A,D)\nCambio Personaje => (H)\nCamara Default => L");
 
 	clk= new THREE.Clock();
 	window.addEventListener( tipoEvento, listener, capturar);
@@ -1012,9 +1013,13 @@ function loop(){
 	
 	var time= clk.getElapsedTime();
 	
-	if(time>=480 && fin==0){
+	if(time>=540 && fin==0){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
+	}
+	if(cont= 40){
+		window.alert("Has ganado c: \nRecarga la pagina (F5)");
+		fin=1;			
 	}
 	
 
@@ -1049,7 +1054,7 @@ var cuboMalla;
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0,rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1, clk;
+var derecha=0, izquierda=0,rotation=0,pause=0, delta=0,k=-2, def=0, cubo, t=1, cont=0, clk;
 var fin= 0;
 
 setup();
