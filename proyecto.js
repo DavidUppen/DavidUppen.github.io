@@ -1012,7 +1012,7 @@ function loop(){
 	
 	var time= clk.getElapsedTime();
 	
-	if(time>=330qqqqqqq && fin==0){
+	if(time>=330 && fin==0){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
 	}
