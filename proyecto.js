@@ -3,114 +3,115 @@ var listener = function() {
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
-function push(e) {
 
-	//if(pause!=1){				
+
+function push(e) {
+	if(pause!=1){				
 		if (e.keyCode===104 || e.keyCode===87){			// W, NUM8	(Arriba)			
 			if(derecha===0 && izquierda===0){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.2;
-					camera.position.y+=.2;
+					personaje.position.y+=.35;
+					camera.position.y+=.35;
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.2;
-					camera.position.x+=.2;
+					personaje.position.x+=.35;
+					camera.position.x+=.35;
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.2;
-					camera.position.y-=.2;
+					personaje.position.y-=.35;
+					camera.position.y-=.35;
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.2;
-					camera.position.x-=.2;
+					personaje.position.x-=.35;
+					camera.position.x-=.35;
 				}
 			}	
 		}
 		else if (e.keyCode===98||e.keyCode===83){		// S, NUM2	(Abajo)
 			if(derecha===0 && izquierda===0){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.2;
-					camera.position.y-=.2;
+					personaje.position.y-=.35;
+					camera.position.y-=.35;
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.2;
-					camera.position.x-=.2;
+					personaje.position.x-=.35;
+					camera.position.x-=.35;
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.2;
-					camera.position.y+=.2;
+					personaje.position.y+=.35;
+					camera.position.y+=.35;
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.2;
-					camera.position.x+=.2;
+					personaje.position.x+=.35;
+					camera.position.x+=.35;
 				}
 			}
 		}
 		else if (e.keyCode===69){				// E		(Derecha)
 			if(derecha===0 && izquierda===0){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.2;
-					camera.position.x+=.2;
+					personaje.position.x+=.35;
+					camera.position.x+=.35;
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.2;
-					camera.position.y-=.2;
+					personaje.position.y-=.35;
+					camera.position.y-=.35;
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.2;
-					camera.position.x-=.2;
+					personaje.position.x-=.35;
+					camera.position.x-=.35;
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.2;
-					camera.position.y+=.2;
+					personaje.position.y+=.35;
+					camera.position.y+=.35;
 				}
 			}
 		}
 		else if (e.keyCode===81){				//Q		(Izquierda)
 			if(derecha===0 && izquierda===0){
 				if(impact[1]===0&&impact[5]===0&&impact[7]===0){
-					personaje.position.x-=.2;
-					camera.position.x-=.2;
+					personaje.position.x-=.35;
+					camera.position.x-=.35;
 				}
 			}		
 			else if((derecha===1 && izquierda===-1)||(derecha===-3 && izquierda===3)){
 				if(impact[2]===0&&impact[4]===0&&impact[5]===0){
-					personaje.position.y+=.2;
-					camera.position.y+=.2;
+					personaje.position.y+=.35;
+					camera.position.y+=.35;
 				}
 			}
 			else if((derecha===2 && izquierda===-2)||(derecha===-2 && izquierda===2)){
 				if(impact[0]===0&&impact[4]===0&&impact[6]===0){
-					personaje.position.x+=.2;
-					camera.position.x+=.2;
+					personaje.position.x+=.35;
+					camera.position.x+=.35;
 				}
 			}
 			else if((derecha===3 && izquierda===-3)||(derecha===-1 && izquierda===1)){
 				if(impact[3]===0&&impact[6]===0&&impact[7]===0){
-					personaje.position.y-=.2;
-					camera.position.y-=.2;
+					personaje.position.y-=.35;
+					camera.position.y-=.35;
 				}
 			}
 		}
-	//}
+	}
 	if (e.keyCode===100||e.keyCode===65){			// A, NUM4	(Camara Izquierda)
 		camera.rotateX(rotation*(-Math.PI/32));
 		camera.rotateX(Math.PI/8);
@@ -224,9 +225,9 @@ function push(e) {
 			def=0;
 		}	
 	}
-	//else{						//	(Muestra Código ASCII Obtenido)
-		//console.log(e.keyCode);
-	//}
+	else{						//	(Muestra Código ASCII Obtenido)
+		console.log(e.keyCode);
+	}
 }
 
 function Agent(x=0, y=0){				//	(Declaración Agente)
@@ -355,6 +356,7 @@ function WallE(){
 	var mesh = new THREE.Mesh(WallEForma,material);
 
 	mesh.rotateZ(Math.PI/2);
+
 	return mesh;
 }
 
@@ -369,6 +371,7 @@ function Robot(size,x=0,y=0){
 	this.actuator= new WallE();
 	this.actuator.commands={};
 	this.add(this.actuator);
+	this.castShadow= true;
 
 }
 
@@ -398,8 +401,7 @@ Robot.prototype.sense= function(environment){
 	if((obstaculo.length >0 && (obstaculo[0].distance <= .9))||(obstaculo2.length >0 && (obstaculo2[0].distance <= .9))||(obstaculo3.length >0 && (obstaculo3[0].distance <= 1.6))||(obstaculo4.length >0 && (obstaculo4[0].distance <= 1.6))){
 		if((personaje.position.x)-(this.position.x)<1.2 && ((personaje.position.x)-(this.position.x)>-1.2)){
 			if((personaje.position.y)-(this.position.y)<1 && ((personaje.position.y)-(this.position.y)>-1)){
-				environment.remove(this);
-				console.log(123);		
+				environment.remove(this);		
 			}
 		}
 
@@ -492,13 +494,16 @@ function Wall(size,x=0,y=0){
 	this.position.x= x;
 	this.position.y= y;
 	this.position.z=4.5;
+	this.castShadow= true;
 }
 
 Wall.prototype= new THREE.Mesh();
 
 
-function Personaje(t){
 
+function Personaje(t){
+	THREE.ImageUtils.crossOrigin = '';
+ 	
 	if(t==1){
 		var headForma = new THREE.BoxGeometry( 1, 0.45, 0.5 );
 		var bodyForma = new THREE.BoxGeometry( 0.5, 0.35, 1.25 );
@@ -540,6 +545,8 @@ function Personaje(t){
 		meshForma.merge(baseMalla.geometry, baseMalla.matrix);
 		meshForma.merge(baseMalla2.geometry, baseMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
+
 	}
 	else if(t==2){
 		var headForma = new THREE.BoxGeometry( .9, 0.6, 0.45 );
@@ -605,6 +612,7 @@ function Personaje(t){
 		meshForma.merge(earMalla2.geometry, earMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
 		meshForma.merge(esferaMalla2.geometry, esferaMalla2.matrix);
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
 	}
 	else if(t==3){
 		var headForma = new THREE.BoxGeometry( .45, .45, .35 );
@@ -674,8 +682,10 @@ function Personaje(t){
 		meshForma.merge(shoulderMalla.geometry, shoulderMalla.matrix);
 		meshForma.merge(shoulderMalla2.geometry, shoulderMalla2.matrix);
 		meshForma.merge(esferaMalla.geometry, esferaMalla.matrix);
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TEXTURATRON.jpg');
+
 	}
-	if(t==4){
+	else if(t==4){
 		var headForma = new THREE.SphereGeometry( 0.35,30);
 		var esferaForma1 = new THREE.SphereGeometry( 0.07,20);
 		var esferaForma2 = new THREE.SphereGeometry( 0.07,20);
@@ -748,9 +758,14 @@ function Personaje(t){
 		meshForma.merge(esferaMalla5.geometry, esferaMalla5.matrix);
 		meshForma.merge(esferaMalla6.geometry, esferaMalla6.matrix);
 		meshForma.merge(esferaMalla7.geometry, esferaMalla7.matrix);
+		var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/LAVA.jpg');
+
 	}
-	THREE.ImageUtils.crossOrigin = '';
- 	var textura = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/TWE.jpg');
+	//else if(t==5){
+		
+	
+	//}
+	
   	var material = new THREE.MeshBasicMaterial( {map: textura} );
 	//material= new THREE.MeshNormalMaterial();
 	var mesh = new THREE.Mesh(meshForma, material);
@@ -818,9 +833,12 @@ var mapa = new Array();
 	mapa[51] ="____________________________________________________";
 
 
+
 	personaje = new Personaje(3);	
 
 	var piso = new THREE.BoxGeometry(52, 52, 0.2);
+	piso.translate(0,0,-.6);
+	
 	var pared1 = new THREE.BoxGeometry(52, 1, 50);
 	var pared2 = new THREE.BoxGeometry(1, 52, 50);
 	var pared3 = new THREE.BoxGeometry(52, 1, 50);
@@ -829,13 +847,10 @@ var mapa = new Array();
 	pared2.translate(26,0,24);
 	pared3.translate(0,-26,24);
 	pared4.translate(-26,0,24);
-        
 	
-	piso.translate(0,0,-.6);
-
         THREE.ImageUtils.crossOrigin = '';
  	var textura1 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/SUELOTEX.jpg');
-  	var material1 = new THREE.MeshBasicMaterial( {map: textura1} );
+  	var material1 = new THREE.MeshLambertMaterial( {map: textura1} );
 	var textura2 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/PARED1.jpg');
   	var material2 = new THREE.MeshBasicMaterial( {map: textura2} );
 	var textura3 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/saturno.jpg');
@@ -844,35 +859,28 @@ var mapa = new Array();
   	var material4 = new THREE.MeshBasicMaterial( {map: textura4} );
 	var textura5 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/astro.jpg');
   	var material5 = new THREE.MeshBasicMaterial( {map: textura5} );
-	//var material = new THREE.MeshBasicMaterial(color1);
-        
+	var textura6 = THREE.ImageUtils.loadTexture('http://daviduppen.github.io/CARA.jpg');
+	var material6 = new THREE.MeshBasicMaterial({map: textura6} );
 	
+
 	//var color1 = new THREE.Color(0xC9C9C9);
-	//material = new THREE.MeshBasicMaterial();
+	//var materialL = new THREE.MeshLambertMaterial({color: "#00cc00"});
 	//material.color = color1;
+
 
        	var pisoMalla = new THREE.Mesh(piso, material1);
 	var pared1Malla = new THREE.Mesh(pared1, material2);
 	var pared2Malla = new THREE.Mesh(pared2, material3);
 	var pared3Malla = new THREE.Mesh(pared3, material4);
 	var pared4Malla = new THREE.Mesh(pared4, material5);
+
 	
-	// LIGHTS
-	//var light = new THREE.AmbientLight(0xffffff,0.5);
-	//scene.add(light);
-
-	//var light = new THREE.PointLight(0xffffff,2.0, 600);
-	//light.position.z= 20;
-	//scene.add(light);
 	
-	//var light = new THREE.DirectionalLight(0xffffff);
-	//scene.add(light);
-
-	//var light = new THREE.SpotLight(0xffffff,2.0,1000,1);
-	//light.position.set( -80, -80, 50 );
-	//light.castShadow= true;
-	//scene.add(light);
-
+	var iluminacion = new THREE.PointLight(0xFFFFFF);
+	iluminacion.position.z = 30;
+	iluminacion.position.y= 9;
+	iluminacion.position.x=-9;
+	
 	environment= new Environment();
 	environment.setMap(mapa);
 	environment.add(personaje);
@@ -881,8 +889,8 @@ var mapa = new Array();
 	environment.add(pared2Malla);
 	environment.add(pared3Malla);
 	environment.add(pared4Malla);
+	environment.add(iluminacion);
 	
-	//environment.add(light);
 
 	raycaster[0]= new THREE.Raycaster( personaje.position, new THREE.Vector3(1,0,0));
 	raycaster[1]= new THREE.Raycaster( personaje.position, new THREE.Vector3(-1,0,0));
@@ -906,10 +914,16 @@ var mapa = new Array();
 
 	environment.add(camera);
 
-	//renderer.shadowMapEnabled= true;
-	//personaje.castShadow= true;
-	//pisoMalla.receiveShadow= true;
-	
+	renderer.shadowMapEnabled=true;
+	personaje.castShadow=true;	
+	pared1Malla.castShadow= true;
+	pared2Malla.castShadow= true;
+	pared3Malla.castShadow= true;
+	pared4Malla.castShadow= true;
+
+	pisoMalla.receiveShadow=true;
+	iluminacion.castShadow=true;
+
 
 	var tipoEvento = 'resize';
 	var capturar = false;
@@ -937,6 +951,7 @@ function loop(){
 		}	
 	}
 
+		
 	environment.sense();
 	environment.plan();
 	environment.act();
@@ -945,10 +960,11 @@ function loop(){
 }
 
 
+var cuboMalla;
 var environment, camera, renderer;
 var raycaster= new Array();
 var impact = new Array();
-var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0;
+var derecha=0, izquierda=0, rotation=0,pause=0, delta=0,k=-2, def=0, cubo;
 
 setup();
 loop();
