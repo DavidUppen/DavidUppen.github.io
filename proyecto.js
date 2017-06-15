@@ -1018,7 +1018,7 @@ function loop(){
 		window.alert("Has perdido :c \nRecarga la pagina (F5)");
 		fin=1;
 	}
-	if(cont== totalrobot){
+	if(cont== totalrobot && fin==0){
 		window.alert("Has ganado c: \nRecarga la pagina (F5)");
 		fin=1;			
 	}
